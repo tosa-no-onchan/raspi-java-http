@@ -1,0 +1,314 @@
+package http_pi;
+
+import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Date;
+
+public class http_comLib {
+	private byte[] buf;
+	private boolean _ka; // keep_alive = true/false
+	private long timeout;
+
+	public http_comLib(boolean ka,byte[] _buf) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		buf=_buf;
+		_ka=ka;
+		timeout = System.currentTimeMillis()+120*1000L;
+	}
+	public http_comLib(boolean ka,byte[] _buf,long _timeout) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		buf=_buf;
+		_ka=ka;
+		timeout=_timeout;
+	}
+	public void set_ka(boolean ka){
+		_ka=ka;
+	}
+	public void set_timeout(long _timeout){
+		timeout=_timeout;
+	}
+	/*
+	 * putHttpResponse(InputStream is,OutputStream ou)
+	 */
+	public void putHttpResponse(InputStream is,OutputStream ou){
+		if(_ka)
+			putHttpResKeep(is,ou);
+		else
+			putHttpResNon_keep(is,ou);
+	}
+	/*
+	 * putHttpResNon_keep(InputStream is,OutputStream ou)
+	 */
+	public void putHttpResNon_keep(InputStream is,OutputStream ou){
+		// cgi 出力
+		//InputStream is = p.getInputStream();
+		// http response
+		DataOutputStream outs = new DataOutputStream(ou);
+		System.out.println("http_comLib::putHttpResNon_keep():#1 passed");
+		int len;
+		boolean first_f=true;
+		// context出力の受け取り
+		try{
+			while ((len = is.read(buf)) != -1) {
+				if(first_f == true){
+					System.out.println("http_comLib::putHttpResNon_keep():#2 passed");
+					outs.writeBytes(mkHttpHeaderOk(0));
+					first_f=false;
+				}
+				outs.write(buf,0,len);
+			}
+			System.out.println("http_comLib::putHttpResNon_keep():#3 passed");
+			outs.flush();
+		}
+		catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			//プログラムロードエラー
+			System.err.println("http_comLib::putHttpResNon_keep():#90 error ="+e);
+		}
+	}
+	/*
+	 * putHttpResKeep(InputStream is,OutputStream ou)
+	 */
+	public void putHttpResKeep(InputStream is,OutputStream ou){
+		BufferedInputStream ins = new BufferedInputStream(is);
+		//OutputStream outs = new BufferedOutputStream(ou);
+		DataOutputStream outs = new DataOutputStream(ou);
+
+		boolean err_f=false;
+		boolean chunck_f=false;
+		boolean first_f=true;
+		boolean end_f=false;
+		boolean next_f;	// 未受信データ有無
+		
+		int bdy_l;
+		int body_total=0;
+		int hd_l=0;			// header length
+
+		while(err_f==false && end_f==false){
+			// 1 context出力の受け取り
+			int pos=0;
+			int rem_l=buf.length;
+			int rd_l=0;	// cgiから受け取ったデータ長
+			int l;
+			next_f=false;
+			try{
+				while (true) {
+					l = ins.read(buf, pos, rem_l);
+					// eof
+					if(l == 0){
+						System.out.println("http_comLib::putHttpResKeep() :#1.1 l="+l);
+						end_f=true;
+						break;
+					}
+					else if(l<0){
+						System.out.println("http_comLib::putHttpResKeep() :#1.2 l="+l);
+						end_f=true;
+						break;
+					}
+					pos+=l;
+					rd_l+=l;
+					rem_l-=l;
+					if(rem_l<=0){
+						//System.out.println("http_comLib::putHttpResKeep() :#1.3 buffer empty rem_l="+rem_l);
+						// int j=ins.available(); すぐにチェックしても 0 の時があります。
+						next_f=true;	// 未受信データ有
+						break;
+					}
+				}
+			}
+			catch (IOException e) {
+				// TODO 自動生成された catch ブロック
+				System.out.println("http_comLib::putHttpResKeep() :#2 error!!");
+				err_f=true;
+			}
+			System.out.println("http_comLib::putHttpResKeep() :#3 rd_l="+rd_l);
+			//System.out.println("http_comLib::putHttpResKeep() :#4 buf=\n"+_util_lib.BytetoHex(buf, 60));
+			//System.out.println("http_comLib::putHttpResKeep() :#4 buf=");
+			//_util_lib.printByte(buf, 60);
+
+			bdy_l=rd_l;
+			//最初のcgiからの受け取りの終了です
+			if(first_f){
+				//まだデータが継続してあります
+				if(next_f){
+					//チャンクにします。
+					chunck_f=true;
+				}
+				//先頭から 空行(\r\n\r\n) までを検索します。
+				hd_l= compHeaderLng(buf,rd_l);
+				// hd_l=0 の場合もあります
+				bdy_l-=hd_l;
+			}
+			body_total+=bdy_l;
+			//チャンクではありません
+			if(!chunck_f){
+				String http_hd_ok=mkHttpHeaderOk(bdy_l);
+				//System.out.println("http_comLib::putHttpResKeep() :#5 http_hd_ok="+http_hd_ok);
+				try {
+					outs.writeBytes(http_hd_ok);
+					outs.write(buf,0,rd_l);
+					outs.flush();
+				}
+				catch (IOException e) {
+					// TODO 自動生成された catch ブロック
+					System.out.println("http_comLib::putHttpResKeep() :#6 error!!");
+					err_f=true;
+				}
+			}
+			//チャンクの送信
+			else{
+				String http_hd_chunk="";
+				int pos_b=0;
+				if(first_f){
+					pos_b=hd_l;
+					http_hd_chunk=mkChunkHeader();
+				}
+				try {
+					if(first_f){
+						//chunkヘッダーを出す
+						outs.writeBytes(http_hd_chunk);
+						//オリジナルのヘッダーを出す
+						if(hd_l>0)
+							outs.write(buf,0,hd_l);
+					}
+					if(bdy_l>0){
+						// bdy_l を Hexに変換します。
+						String chunk_s=Integer.toHexString(bdy_l)+"\r\n";
+						System.out.println("http_comLib::putHttpResKeep() :#7 chunk_s="+chunk_s);
+						outs.writeBytes(chunk_s);
+						outs.write(buf,pos_b,bdy_l);
+						if(next_f==false){
+							outs.writeBytes("0\r\n\r\n");
+						}
+						outs.flush();
+					}
+					else if(body_total>0){
+						outs.writeBytes("0\r\n\r\n");
+						outs.flush();
+					}
+				}
+				catch (IOException e) {
+					// TODO 自動生成された catch ブロック
+					System.err.println("http_comLib::putHttpResKeep() :#8 error e="+e);
+					err_f=true;
+				}
+			}
+			first_f=false;
+		}
+	}
+	/*
+	 * String mkHttpHeaderOk(int ln)
+	 */
+	public String mkHttpHeaderOk(int ln){
+		Date now = new Date();
+		//int k=ln-"Content-Type: text/html\r\n\r\n".length();
+		int k=ln;
+		String http_hd_ok=
+				"HTTP/1.1 200 OK\r\n"
+				+"Date: "+now+"\r\n"
+				+"Server: raspberry-pi\r\n";
+		if(_ka==true){
+			http_hd_ok+="Content-Length: "+String.valueOf(k)+"\r\n"
+					+"Keep-Alive: timeout="+String.valueOf(Defs.KAT)+", max="+String.valueOf(Defs.MKAR)+"\r\n"	// timeout -> sec
+					+"Connection: Keep-Alive\r\n";
+		}
+		//+"Content-type: text/html\r\n\r\n" // 注）最後は \r\nが２個必要
+		return http_hd_ok;
+	}
+	/*
+	 * String mkHttpHeaderOK_file(String method,boolean img_f,boolean expir_f,File file,String contentType)
+	 */
+	public String mkHttpHeaderOK_file(String method,boolean img_f,boolean expir_f,File file,String contentType){
+		Date now= new Date(file.lastModified());
+		String hd_s="HTTP/1.1 200 OK\r\n"
+			+"Date: "+now+"\r\n"
+			+"Server: raspberry-pi\r\n";
+		if(img_f){
+			hd_s +="Accept-Ranges: bytes\r\n";
+		}
+		if(expir_f==true && Defs.Expi>0 && method.equals("GET")==true){
+			Date expir = new Date(System.currentTimeMillis()+Defs.Expi);
+			//Expires: Thu, 01 Dec 1994 16:00:00 GMT
+			hd_s+="Expires: "+expir+"\r\n";
+		}
+		hd_s +="Keep-Alive: timeout="+String.valueOf(Defs.KAT)+", max="+String.valueOf(Defs.MKAR)+"\r\n";	// timeout -> sec
+		// keep-alive ON
+		if(_ka){
+			hd_s +="Connection: Keep-Alive\r\n";
+		}
+		else{
+			hd_s+="Connection: close\r\n";
+		}
+		hd_s +="Content-Length: "+file.length()+"\r\n";
+		hd_s +="Content-Type: "+contentType+"\r\n\r\n";	// 注）最後は \r\nが２個必要
+		return hd_s;
+	}
+	/*
+	 * String mkChunkHeader()
+	 */
+	public String mkChunkHeader(){
+		Date now = new Date();
+		String http_hd_chunk=
+				"HTTP/1.1 200 OK\r\n"
+				+"Date: "+now+"\r\n"
+				+"Server: raspberry-pi\r\n"
+				+"Keep-Alive: timeout="+String.valueOf(Defs.KAT)+", max="+String.valueOf(Defs.MKAR)+"\r\n"	// timeout -> sec
+				+"Connection: Keep-Alive\r\n"
+				+"Transfer-Encoding: chunked\r\n";
+				//+"Content-type: text/html\r\n\r\n";	// 注）最後は \r\nが２個必要
+		//System.out.println("http_comLib::mkChunkHeader() :#9 http_hd_chunk="+http_hd_chunk);
+		return http_hd_chunk;
+	}
+	/*
+	 *String mkHttpHeaderNg() 
+	 */
+	public String mkHttpHeaderNg(){
+		Date now = new Date();
+		String http_hd_ng=
+				"HTTP/1.1 404 internal server error\r\n"
+				+"Date: "+now+"\r\n"
+				+"Server: HTTP 1.1\r\n"
+				+"Content-type: text/html\r\n\r\n"; // 注）最後は \r\nが２個必要
+		return http_hd_ng;
+	}
+	/*
+	 * int compHeaderLng(byte[] buf,int l)
+	 * \r\n\r\n を含んだバッファの先頭からの長さを計算します。
+	 */
+	public int compHeaderLng(byte[] buf,int l){
+		int pos=0;
+		boolean f_ok=false;
+		if(l >= 0){
+			for(;l>=0;pos++,l--){
+				//System.out.println("http_comLib::compHeaderLng() :#2 pos="+pos+",buf[pos]="+buf[pos]);
+				// for windows CR(0d)+lF(0a)+CR(0d)+LF(0a)
+				if(l>=4 && (buf[pos] == 0x0d &&
+					buf[pos+1] == 0x0a &&
+					buf[pos+2] == 0x0d &&
+					buf[pos+3] == 0x0a)){
+					f_ok=true;
+					pos+=4;
+					break;
+				}
+				// for linux LF(0a)+LF(0a) or mac CR(0d)+CR(0d)
+				else if((l>=2 && 
+						(buf[pos] == 0x0a && buf[pos+1] == 0x0a) || 
+						(buf[pos] == 0x0d && buf[pos+1] == 0x0d))){
+					f_ok=true;
+					pos+=2;
+					break;
+				}
+			}
+		}
+		if(f_ok==true){
+			//System.out.println("http_comLib::compHeaderLng() :#9 pos="+pos);
+			return pos;
+		}
+		return 0;
+	}
+
+}

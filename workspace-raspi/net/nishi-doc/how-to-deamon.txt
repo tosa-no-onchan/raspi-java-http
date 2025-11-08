@@ -1,0 +1,28 @@
+how-to-deamon.
+Welcom Raspberry Pi java http server.
+
+1)edit ~your-id/workspace-raspi/net/http_pid
+..
+#myid is your user id
+myid=pi-nishi  <-  change pi-nishi to your raspberry pi user id
+..
+
+2)test deamon script  start/check/stop
+#cd ~your-id/workspace-raspi/net/
+
+#./http_pid start
+#./http_pid check
+http://raspberry-pi-ip/  -> Can you see index.html file?
+#./http_pid stop
+
+
+3)deproy deamon script
+#cd /etc/init.d
+#cp ~your-id/workspace-raspi/net/http_pid ./
+
+#chkconfig --list | grep http_pid
+#chkconfig --level 3 http_pid on
+
+#service http_pid start
+http://raspberry-pi-ip/  -> Can you see index.html file?
+ 

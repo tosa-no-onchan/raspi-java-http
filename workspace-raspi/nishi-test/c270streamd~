@@ -1,0 +1,128 @@
+#!/bin/sh
+#
+# chkconfig: - 87 15
+# processname: c270streamd
+# description: c270 mjpeg streamer daemon
+# config: /etc/c270streamd.conf
+#
+# /etc/init.d/c270streamd
+# pidfile: /var/run/c270streamd.pid
+# lockfile: /var/lock/subsys/c270streamd
+
+debian=0
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+    . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+    . /etc/rc.d/init.d/functions
+elif [ -f /lib/lsb/init-functions ] ; then
+    . /lib/lsb/init-functions
+    debian=1
+else
+    exit 1
+fi
+
+if [ $debian -eq 0 ]; then
+  lockfile=/var/lock/subsys/c270streamd
+else
+  lockfile=/var/lock/c270streamd
+fi
+
+# Avoid using root's TMPDIR
+unset TMPDIR
+
+
+pidfilename=c270streamd
+pidfile=/var/run/${pidfilename}.pid
+
+#myid is your user id
+#myid=nishi
+
+# 自作プログラムの時は以下で指定
+mjpg_streamer_path=/usr/local/src/mjpg-streamer
+
+option=""
+
+if [ $debian -eq 0 ]; then
+  cmdline=./go_video.exe
+  cmd_chk="./mjpg_streamer -i ./input_uvc.so -d /dev/video0"
+else
+  cmdline=go_video.exe
+  cmd_chk="./mjpg_streamer -i ./input_uvc.so -d /dev/video0"
+fi
+
+
+RETVAL=0
+
+start() {
+    #env > ${jar_path}env.txt
+    KIND="C270Streamer"
+    echo -n $"Starting $KIND services: "
+    if [ $debian -eq 0 ]; then
+      (cd $mjpg_streamer_path;daemon --pidfile=${pidfile} "$cmdline &1>/dev/null")
+      RETVAL=$?
+      # pid
+      pgrep -f "$cmd_chk" > $pidfile
+    else
+      start-stop-daemon --start --background -m --oknodo --pidfile ${pidfile} --chdir $mjpg_streamer_path --exec $cmdline
+      RETVAL=$?
+    fi
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile || RETVAL=1
+    return $RETVAL
+} 
+
+stop() {
+    KIND="C270Streamer"
+    echo -n $"Shutting down $KIND services: "
+    if [ $debian -eq 0 ]; then
+      killproc -p $pidfile $pidfilename
+      RETVAL=$?
+    else
+      #killproc -p $pidfile $pidfilename
+      pgrep -f "$cmd_chk" > $pidfile
+      killproc -p $pidfile $pidfilename
+      rm -f $pidfile
+      #start-stop-daemon --stop --pidfile ${pidfile} --oknodo --exec $cmd_chk
+      RETVAL=$?
+    fi
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    echo
+    return $RETVAL
+} 
+
+restart() {
+    stop
+    start
+}
+
+check_proc() {
+    echo "check_proc()"
+    echo "cmdline=$cmdline"
+    echo "cmd_chk=$cmd_chk"
+    #pgrep -f "$cmd_chk" > $pidfile
+    echo -n "active pid="
+    pgrep -f "$cmd_chk"
+    echo -n "$pidfile="
+    cat $pidfile
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  check)
+        check_proc
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|check}"
+        exit 2
+esac
+
+exit $?

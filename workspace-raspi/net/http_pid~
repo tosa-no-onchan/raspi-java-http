@@ -1,0 +1,160 @@
+#!/bin/sh
+#
+# chkconfig: - 86 14
+# processname: http_pid
+# description: Raspi Java Http Server daemon
+# config: /etc/http_pid/server.conf
+#
+# /etc/init.d/http_pid
+# pidfile: /var/run/http_pid.pid
+# lockfile: /var/lock/subsys/http_pid
+#
+### BEGIN INIT INFO
+# Provides:	http_pid
+# Required-Start:	$remote_fs $syslog
+# Required-Stop:	$remote_fs $syslog
+# Default-Start:	3 4 5
+# Default-Stop:	1 2
+# Short-Description: Java Http pi
+### END INIT INFO
+
+debian=0
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+    . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+    . /etc/rc.d/init.d/functions
+elif [ -f /lib/lsb/init-functions ] ; then
+    . /lib/lsb/init-functions
+    debian=1
+else
+    exit 1
+fi
+
+if [ $debian -eq 0 ]; then
+  java_cmd=java
+  lockfile=/var/lock/subsys/http_pid
+else
+  java_cmd=/usr/bin/java
+  lockfile=/var/lock/http_pid
+  LANG=en_US.UTF-8
+  export LANG
+fi
+
+# Avoid using root's TMPDIR
+unset TMPDIR
+
+if [ -f /etc/http_pid/server ]; then
+   . /etc/http_pid/server
+fi
+
+pidfilename=http_pid
+pidfile=/var/run/${pidfilename}.pid
+
+#myid is your user id
+myid=nishi
+# 自作プログラムの時は以下で指定
+jar_path=/home/${myid}/workspace-raspi/net/
+cls_path="bin:$CLASSPATH"
+bootclass=http_pi.httpServer
+
+# server.conf using
+# option=deamon -> /etc/http_pid/server.conf
+# option=""  -> /home/${myid}/workspace-raspi/net/server.conf
+#option=deamon
+option=""
+
+# コマンドラインで実行する内容
+# jar_exec= 0/1  0:class file  1:jar file
+jar_exec=1
+if [ $jar_exec -eq 0 ]; then
+  if [ $debian -eq 0 ]; then
+    cmdline="$java_cmd -classpath $cls_path $bootclass $option"
+    cmd_chk="$java_cmd -classpath $cls_path $bootclass"
+  else
+    exit 1
+  fi
+else
+  if [ $debian -eq 0 ]; then
+    cmdline="$java_cmd -jar http_pi.jar $option"
+    cmd_chk="$java_cmd -jar http_pi.jar"
+  else
+    cmdline=http_pi.exec
+    cmd_chk="$java_cmd -jar http_pi.jar"
+  fi
+fi
+
+RETVAL=0
+
+start() {
+    #env > ${jar_path}env.txt
+    KIND="HttpPiServer"
+    echo -n $"Starting $KIND services: "
+    if [ $debian -eq 0 ]; then
+      (cd $jar_path;daemon --pidfile=${pidfile} "$cmdline &")
+      RETVAL=$?
+      # pid
+      pgrep -f "$cmd_chk" > $pidfile
+    else
+      start-stop-daemon --start --background -m --oknodo --pidfile ${pidfile} --chdir $jar_path --exec $cmdline
+      RETVAL=$?
+    fi
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile || RETVAL=1
+    return $RETVAL
+} 
+
+stop() {
+    KIND="HttpPiServer"
+    echo -n $"Shutting down $KIND services: "
+    if [ $debian -eq 0 ]; then
+      killproc -p $pidfile $pidfilename
+      RETVAL=$?
+    else
+      killproc -p $pidfile $pidfilename
+      pgrep -f "$cmd_chk" > $pidfile
+      killproc -p $pidfile $pidfilename
+      rm -f $pidfile
+      #start-stop-daemon --stop --pidfile ${pidfile} --oknodo --exec $cmd_chk
+      RETVAL=$?
+    fi
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    echo
+    return $RETVAL
+} 
+
+restart() {
+    stop
+    start
+}
+
+check_proc() {
+    echo "check_proc()"
+    echo "cmdline=$cmdline"
+    echo "cmd_chk=$cmd_chk"
+    #pgrep -f "$cmd_chk" > $pidfile
+    echo -n "active pid="
+    pgrep -f "$cmd_chk"
+    echo -n "$pidfile="
+    cat $pidfile
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  check)
+        check_proc
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|check}"
+        exit 2
+esac
+
+exit $?

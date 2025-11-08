@@ -1,0 +1,166 @@
+/**
+ * Raspberry Pi java http server
+ * v1.0
+ * classProcessor.java
+ * 外部 perl のプロセスを生成&実行します
+ */
+package http_pi;
+
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Writer;
+import java.lang.ProcessBuilder.Redirect;
+import java.net.Socket;
+import java.util.Date;
+import java.util.Map;
+
+/**
+ * @author nishi
+ *
+ */
+public class cgiProcessor {
+	public cgiProcessor(){
+	}
+
+	public void exec(Socket sock,String cmd,HttpReader hrd,HttpDataInputStream din_r){
+		System.out.println("cgiProcessor :#1 cmd="+cmd);
+		String prog="";
+		String dir_s="";
+		String[] cmd_d=cmd.split("\\/");
+		for (int i=0;i < cmd_d.length-1;i++){
+			dir_s+="/"+cmd_d[i];
+		}
+		prog=cmd_d[cmd_d.length-1];
+		String parm=hrd.parm;
+		
+		File dir = new File(Defs.cgi_rootDir+dir_s);
+		//エラー出力ログ
+		File err_log;
+		//エラー出力ログ
+		if(Defs.error_log.equals("")==false){
+			err_log = new File(Defs.error_log);
+		}
+		else{
+			err_log = new File("/dev/null");
+		}
+		boolean f=false;
+		try{
+			//OutputStream outs = new BufferedOutputStream(sock.getOutputStream());
+			DataOutputStream outs = new DataOutputStream(sock.getOutputStream());
+			//Writer out = new OutputStreamWriter(outs);
+
+			
+			//ProcessBuilder pb = new ProcessBuilder("perl",prog);
+			ProcessBuilder pb = new ProcessBuilder("./"+prog);
+			Map<String, String> env = pb.environment();
+
+			if(hrd.http_hd.get("Content-Type:") != null){
+				env.put("CONTENT_TYPE", hrd.http_hd.get("Content-Type:"));
+			}
+			if(hrd.http_hd.get("Content-Length:") != null){
+				env.put("CONTENT_LENGTH", hrd.http_hd.get("Content-Length:"));
+			}
+			env.put("REQUEST_METHOD", hrd.method);
+			
+			// GET  ->  QUERY_STRING
+			env.put("QUERY_STRING", parm);
+
+			if(hrd.http_hd.get("Cookie:") != null){
+				env.put("HTTP_COOKIE", hrd.http_hd.get("Cookie:"));
+			}
+			
+			pb.directory(dir);
+
+			//エラー出力を標準出力とをマージ出力します
+			//pb.redirectErrorStream(true);
+
+			//エラー出力をファイルに出力
+			pb.redirectError(Redirect.appendTo(err_log));
+			
+			Process p = pb.start();
+			Date now = new Date();
+			String http_hd_ok=
+					"HTTP/1.1 200 OK\r\n"
+					+"Date: "+now+"\r\n"
+					+"Server: raspberry-pi\r\n"
+					//+"Content-type: text/html\r\n\r\n" // 注）最後は \r\nが２個必要
+					;
+			String http_hd_ng=
+					"HTTP/1.1 404 internal server error\r\n"
+					+"Date: "+now+"\r\n"
+					+"Server: HTTP 1.1\r\n"
+					+"Content-type: text/html\r\n\r\n"; // 注）最後は \r\nが２個必要
+			
+			// cgi 出力
+			InputStream is = p.getInputStream();
+			// エラー出力
+			//InputStream es = p.getErrorStream();
+
+
+			//BufferedReader bis = new BufferedReader(new InputStreamReader(is));
+			//BufferedReader bes = new BufferedReader(new InputStreamReader(es));
+
+			System.out.println("cgiProcessor :#2 passed");
+			int len=System.in.available();
+			if(len <= 0){
+				len=1024;
+			}
+			System.out.println("cgiProcessor :#3 len="+len);
+			byte[] buf=new byte[len];
+
+			if(hrd.method.equals("POST")==true){
+				// cgi 入力
+				DataOutputStream os = new DataOutputStream(p.getOutputStream());
+				int n=0;
+				int data_l;
+				// POST データを cgi の標準入力に転送
+				while (din_r.ready() == true && n < 20000){
+					data_l=din_r.readData(buf,buf.length);
+					os.write(buf,0,data_l);
+					n++;
+				}
+				os.close();
+			}
+			// エラー出力の受け取り
+			//while ((len = es.read(buf)) != -1 ) {
+			//	System.out.println("cgiProcessor :#4 passed");
+			//	if(f == false){
+			//		outs.writeBytes(http_hd_ng);
+			//		f=true;
+			//	}
+			//    outs.write(buf,0,len);;
+			//}
+			if(f == false){
+				System.out.println("cgiProcessor :#6 passed");
+				// context出力の受け取り
+				while ((len = is.read(buf)) != -1) {
+					if(f == false){
+						System.out.println("cgiProcessor :#7 passed");
+						outs.writeBytes(http_hd_ok);
+						f=true;
+					}
+			       outs.write(buf,0,len);
+				}
+			}
+			System.out.println("cgiProcessor :#8 passed");
+			outs.flush();
+		}
+		catch(IOException e){
+			//プログラムロードエラー
+			System.out.println("cgiProcessor :#90 error ="+e);
+			Writer wt;
+			try {
+				wt = new FileWriter(err_log,true);
+				wt.write("cgiProcessor :#90 e="+e+"\n");
+				wt.close();
+			} catch (IOException e1) {
+				// TODO 自動生成された catch ブロック
+				//e1.printStackTrace();
+				System.out.println("cgiProcessor :#91 e1="+e1);
+			}
+		}
+	}
+}

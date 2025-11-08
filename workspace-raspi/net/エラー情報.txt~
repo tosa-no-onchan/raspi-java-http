@@ -1,0 +1,29 @@
+
+http_pi エラー情報
+
+2015.10.21
+Andoroid の googleからアクセスの時
+
+// たしかごみのリクエスト
+>>>requestDispatch :#1 connection:3 [Socket[addr=/192.168.1.10,port=34587,localport=80]]
+requestDispatch(4) :#2 yhost_ip=192.168.1.10
+requestDispatch(4) :#4 lp=0
+>>>requestDispatch :#1 connection:4 [Socket[addr=/192.168.1.10,port=34588,localport=80]]
+requestDispatch(2) :#2 yhost_ip=192.168.1.10
+requestDispatch(2) :#4 lp=0
+HttpReader::read_hd() :#1 recve start stream=  // リクエストデータが無い
+HttpReader::read_hd() :#1 recve start stream= // リクエストデータが無い
+Exception in thread "Thread-4" java.lang.ArrayIndexOutOfBoundsException: 1024
+        at http_pi.HttpInputStream.readline(HttpInputStream.java:164)
+        at http_pi.HttpReader.read_hd(HttpReader.java:143)
+        at http_pi.HttpReader.read(HttpReader.java:80)
+        at http_pi.requestDispatch.requestLoop(requestDispatch.java:138)
+        at http_pi.requestDispatch.run(requestDispatch.java:72)
+        at java.lang.Thread.run(Thread.java:745)
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException
+
+HttpReader::read_hd() :#1 recve start stream=,lng=1
+HttpReader::read_hd() :#2 recve nothing req=00
+
+
+

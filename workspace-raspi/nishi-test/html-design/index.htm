@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="shift_jis">
+<meta name="viewport" content="width=device-width">
+<title>Raspberry Pi Java Web Server</title>
+<style type="text/css">
+<!--
+body{
+ font-size:15px;
+}
+-->
+</style>
+</head>
+<body>
+<p>Raspberry Pi Java Web Server</p>
+Wellcom Raspberry Pi Java Web Server<br />              
+This web server program is written by all java<br />              
+and can excute directly java program(class and java program).<br />              
+Traget Server machine is  Raspberry Pi(Raspbian).<br />            
+Developping Server machine is CentOS 5.X<br />            
+Developped and written by Net Mall Tosa.<br />            
+GPL<br />
+<p><a href="/class-bin/cgi_test.hello_cgi">/class-bin/cgi_test.hello_cgi</a> &nbsp; java hello_cgi(.class  GET)</p>             
+<hr />
+
+<p><a href="/class-mod/mod_test.hello_cgi_mod?hello=hi">/class-mod/mod_test.hello_cgi_mod?hello=hi</a> &nbsp; java hello_cgi_mod(.class GET)</p>              
+<hr />
+
+<p style="margin:0 0 4px 0;">/class-mod/mod_test.test1_cgi_mod&nbsp; java mod_test.test1_cgi_mod(.class POST)<p>            
+<hr />
+<form method="post" action="/class-mod/mod_test.test1_cgi_mod">
+name&nbsp;<input type="text" name="name" size="20" value="koroneko"><br />
+  order count             
+  <select size="1" name="scount">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <input type="hidden" name="tno" value="005" />                     
+  <input type="hidden" name="func" value="buy" />                     
+  <input type="submit" value="send" name="go">             
+  <input type="hidden" name="page" value="" />             
+</form>
+<br />
+<hr />
+<form method="post" enctype="multipart/form-data" action="/class-mod/mod_test.test1_cgi_mod">
+name&nbsp;<input type="text" name="name" size="20" value="koroneko"><br />
+  order count             
+  <select size="3" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="file" name="simg" />
+  <input type="hidden" name="tno" value="005" />                     
+  <input type="hidden" name="func" value="buy" />                     
+  <input type="submit" value="send" name="go">             
+  <input type="hidden" name="page" value="" />             
+</form>
+
+<br />
+<hr />
+<form method="post" enctype="multipart/form-data" action="/class-mod/mod_test.test1_cgi_mod">
+name&nbsp;<input type="text" name="name" size="20" value="koroneko"><br />
+  order count             
+  <select size="3" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="file" name="simg" /><br />
+  <input type="file" name="sthumb" /><br />
+  <input type="hidden" name="tno" value="005" />         
+  <input type="hidden" name="func" value="buy" />                     
+  <input type="submit" value="send" name="go">             
+  <input type="hidden" name="page" value="" />             
+</form>
+
+<br />
+<hr />
+<form method="post" enctype="multipart/form-data" action="/class-mod/mod_test.test1_cgi_mod">
+  <input type="file" name="simg" /><br />
+  <input type="submit" value="send" name="go">
+</form>
+
+<br />
+<hr />
+<form method="post" enctype="multipart/form-data" action="/class-mod/mod_test.test1_cgi_mod">
+  <input type="submit" value="send" name="go">
+  <input type="file" name="simg" /><br />
+</form>
+<br />
+<hr />
+/class-mod/mod_test.test1_cgi_mod<br />
+<form method="post" action="/class-mod/mod_test.test1_cgi_mod">
+  order count 
+  <select size="3" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form method="post" action="/class-mod/mod_test.test1_cgi_mod">
+/class-mod/mod_test.test1_cgi_mod<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">はろー
+はいそうです。１</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form method="post" action="/class-bin/cgi_test.hello2_cgi">
+/class-bin/cgi_test.hello2_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">はろー
+はいそうです。２</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+
+<br />
+<hr />
+<a href="/cgi-bin/cgi-test.cgi?tno=005&momo=hello">/cgi-bin/cgi-test.cgi?tno=005&momo=hello</a><br />
+
+<br />
+<hr />
+<form method="post" action="/cgi-bin/cgi-test.cgi">
+/cgi-bin/cgi-test.cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">はろー
+はいそうです。３</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+
+<hr />
+<a href="/cgi-bin/hello.cgi?tno=005&momo=hello">/cgi-bin/hello.cgi?tno=005&momo=hello</a><br />
+
+<hr />
+<br />
+<a href="/php/hello.php?parm=neko&dog=baubau">/php/hello.php?parm=neko&dog=baubau</a><br />
+
+<br />
+<hr />
+<form method="post" action="/php/hello.php">
+/php/hello.php<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">はろー
+はいそうです。４</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+
+<hr />
+<p><a href="/class-bin/MyLed_cgi">/class-bin/MyLed_cgi</a> &nbsp; java MyLed_cgi(.class)  Rspberri pi LED チカチカ</p>
+
+<hr />
+<p><a href="/class-mod/TempSensor_cgi_mod">/class-mod/TempSensor_cgi_mod</a> &nbsp; java TempSensor_cgi_mod(.class)  Rspberri pi 温度センサー</p>
+<hr />
+<p><a href="/class-mod/Shutdown_cgi_mod">Shutdown Raspberry pi machine</a></p>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+how-to-built-in-class.
+
+Welcom to Raspberry Pi java http server.
+Version 1.5 update 2014.1.30
+became support for built in class (pre load class) excuting.
+
+a sample program
+workspace-raspi/nishi-test/src/built_in_app/hello_bin.java
+
+1] compile and make jar
+$cd workspace-raspi/nishi-test/
+$sh ./make_built_in_app_jar.sh
+  --> ./built_in_app.jar is made
+
+2] deploy built_in_app.jar to java lib/ext dir.
+#cd /usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/ext or /usr/java/jdk1.7.0_xx/jre/lib/ext
+#ln -s /home/your-id/workspace-raspi/nishi-test/built_in_app.jar built_in_app.jar
+
+3]server.conf append
+$cd /home/your-id/workspace-raspi/net
+$vi server.conf
+
+# built in class name
+# pre loading class definition
+#built_in=class-name
+built_in=built_in_app.hello_bin
+
+4] http_pid service restart
+
+5] url access
+http://raspi-ip/built-in/method-name
+
+exp.
+http://raspi-ip/built-in/hello?parm=ok
+http://raspi-ip/built-in/hello2?cat=nyao&dog=wanwan
+
+
+

@@ -1,0 +1,131 @@
+#!/bin/sh
+#
+# chkconfig: - 88 14
+# processname: serpi_con
+# description: serial-pi connection daemon
+#
+# /etc/init.d/seri_con
+# pidfile: /var/run/seri_con.pid
+# lockfile: /var/lock/subsys/seri_con
+
+debian=0
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+    . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+    . /etc/rc.d/init.d/functions
+elif [ -f /lib/lsb/init-functions ] ; then
+    . /lib/lsb/init-functions
+    debian=1
+else
+    exit 1
+fi
+
+if [ $debian -eq 0 ]; then
+  lockfile=/var/lock/subsys/seri_con
+else
+  lockfile=/var/lock/seri_con
+fi
+
+# Avoid using root's TMPDIR
+unset TMPDIR
+
+
+pidfilename=seri_con
+pidfile=/var/run/${pidfilename}.pid
+
+#myid is your user id
+myid=pi-nishi
+
+# 自作プログラムの時は以下で指定
+seri_con_path=/home/${myid}/workspace-raspi/nishi-test
+
+option=""
+
+if [ $debian -eq 0 ]; then
+  cmdline=./serpi_con.exe
+  cmd_chk="java arduino.serial_pi_con"
+else
+  cmdline=./serpi_con.exe
+  cmd_chk="java arduino.serial_pi_con"
+fi
+
+
+RETVAL=0
+
+start() {
+    #env > ${jar_path}env.txt
+    KIND="Serpi_con"
+    if ! [ -f $lockfile ] ; then
+        echo -n $"Starting $KIND services: "
+        if [ $debian -eq 0 ]; then
+            (cd $seri_con_path;daemon --pidfile=${pidfile} "$cmdline &>/dev/null")
+            RETVAL=$?
+            # pid
+            pgrep -f "$cmd_chk" > $pidfile
+        else
+            start-stop-daemon --start --background -m --oknodo --pidfile ${pidfile} --chdir $seri_con_path --exec $cmdline
+            RETVAL=$?
+        fi
+        echo
+        [ $RETVAL -eq 0 ] && touch $lockfile || RETVAL=1
+        return $RETVAL
+    fi
+} 
+
+stop() {
+    KIND="Serpi_con"
+    if [ -f $lockfile ] ; then
+        echo -n $"Shutting down $KIND services: "
+        if [ $debian -eq 0 ]; then
+            killproc -p $pidfile $pidfilename
+            RETVAL=$?
+        else
+            #killproc -p $pidfile $pidfilename
+            pgrep -f "$cmd_chk" > $pidfile
+            killproc -p $pidfile $pidfilename
+            rm -f $pidfile
+            #start-stop-daemon --stop --pidfile ${pidfile} --oknodo --exec $cmd_chk
+            RETVAL=$?
+        fi
+        [ $RETVAL -eq 0 ] && rm -f $lockfile
+        echo
+        return $RETVAL
+    fi
+} 
+
+restart() {
+    stop
+    start
+}
+
+check_proc() {
+    echo "check_proc()"
+    echo "cmdline=$cmdline"
+    echo "cmd_chk=$cmd_chk"
+    #pgrep -f "$cmd_chk" > $pidfile
+    echo -n "active pid="
+    pgrep -f "$cmd_chk"
+    #echo -n "$pidfile="
+    #cat $pidfile
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  check)
+        check_proc
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|check}"
+        exit 2
+esac
+
+exit $?

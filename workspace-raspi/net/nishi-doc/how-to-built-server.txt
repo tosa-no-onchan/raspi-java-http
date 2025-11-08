@@ -1,0 +1,5 @@
+how-to-built-server.txt
+
+cd workspace-raspi/net
+$sh ./make_java.sh http_pi/httpServer.java
+$sh ./make_http_pi_jar.sh

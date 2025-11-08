@@ -1,0 +1,2 @@
+#!/bin/bash
+java -classpath ~tosaden/workspace/net/bin:$CLASSPATH url_test.URLConnectionTest $1 $2 $3

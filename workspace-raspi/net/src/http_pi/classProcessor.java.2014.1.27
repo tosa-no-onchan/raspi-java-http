@@ -1,0 +1,202 @@
+/**
+ * Raspberry Pi java http server
+ * v1.0
+ * classProcessor.java
+ * 外部 java class のプロセスを生成&実行します
+ */
+package http_pi;
+
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
+import java.lang.reflect.Method;
+import java.net.Socket;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Date;
+import java.io.*;
+
+/**
+ * @author nishi
+ *
+ */
+public class classProcessor {
+	public classProcessor(){
+	}
+	/*
+	 * External program execution
+	 * Socket sock :
+	 * String method : "POST" / "GET"
+	 * String cmd :  request 
+	 * String p_data : post data
+	 */
+	public void exec(Socket sock,String method,String cmd,HttpReader hrd){
+		System.out.println("classProcessor:exec :#1 cmd="+cmd);
+		String prog=cmd;
+		String parm=hrd.parm+hrd.p_data;
+
+		System.out.println("classProcessor:exec :#2 prog="+prog+",parm="+parm);
+		File dir = new File(Defs.class_rootDir);
+		//エラー出力ログ
+		File err_log;
+		boolean f=false;
+		try{
+			//OutputStream outs = new BufferedOutputStream(sock.getOutputStream());
+			DataOutputStream outs = new DataOutputStream(sock.getOutputStream());
+			//Writer out = new OutputStreamWriter(outs);
+
+			//エラー出力ログ
+			if(Defs.error_log.equals("")==false){
+				err_log = new File(Defs.error_log);
+			}
+			else{
+				err_log = new File("/dev/null");
+			}
+
+			//ProcessBuilder pb = new ProcessBuilder("java","-classpath","./bin","http_pi.hello_cgi");
+			//ProcessBuilder pb = new ProcessBuilder("java","http_pi.hello_cgi");
+			ProcessBuilder pb = new ProcessBuilder("java",prog,parm);
+			pb.directory(dir);
+
+			//エラー出力を標準出力とをマージ出力します
+			//pb.redirectErrorStream(true);
+
+			//エラー出力をファイルに出力
+			pb.redirectError(Redirect.appendTo(err_log));
+			
+			Process p = pb.start();
+			Date now = new Date();
+			String http_hd_ok=
+					"HTTP/1.1 200 OK\r\n"
+					+"Date: "+now+"\r\n"
+					+"Server: raspberry-pi\r\n"
+					//+"Content-type: text/html\r\n\r\n" // 注）最後は \r\nが２個必要
+					;
+			String http_hd_ng=
+					"HTTP/1.1 404 internal server error\r\n"
+					+"Date: "+now+"\r\n"
+					+"Server: HTTP 1.1\r\n"
+					+"Content-type: text/html\r\n\r\n"; // 注）最後は \r\nが２個必要
+			
+			// cgi 出力
+			InputStream is = p.getInputStream();
+			// エラー出力
+			//InputStream es = p.getErrorStream();
+
+			//BufferedReader bis = new BufferedReader(new InputStreamReader(is));
+			//BufferedReader bes = new BufferedReader(new InputStreamReader(es));
+
+			System.out.println("classProcessor:exec :#3 passed");
+			int len=System.in.available();
+			if(len <= 0){
+				len=1024;
+			}
+			System.out.println("classProcessor:exec :#4 len="+len);
+			byte[] buf=new byte[len];
+
+			// エラー出力の受け取り
+			//while ((len = es.read(buf)) != -1 ) {
+			//	if(f == false){
+			//		outs.writeBytes(http_hd_ng);
+			//		f=true;
+			//	}
+			//    outs.write(buf,0,len);;
+			//}
+			if(f == false){
+				System.out.println("classProcessor:exec :#5 passed");
+				// context出力の受け取り
+				while ((len = is.read(buf)) != -1) {
+					if(f == false){
+						System.out.println("classProcessor:exec :#6 passed");
+						outs.writeBytes(http_hd_ok);
+						f=true;
+					}
+			       outs.write(buf,0,len);
+				}
+			}
+			System.out.println("classProcessor:exec :#7 passed");
+			outs.flush();
+		}
+		catch(IOException e){
+			System.out.println("classProcessor:exec :#90 error ="+e);
+		}
+	}
+	/*
+	 * dynamic class load execution
+	 * class_ld()
+	 * Socket sock :
+	 * String method : "POST" / "GET"
+	 * String cmd :  request 
+	 * String p_data : post data
+	 */
+	public void class_ld(Socket sock,String method,String cmd,HttpReader hrd){
+		System.out.println("classProcessor:class_ld :#1 cmd="+cmd);
+		String prog=cmd;
+		String parm=hrd.parm+hrd.p_data;
+
+		String argv[]= new String[1];
+    	File dir = new File(Defs.class_rootDir);
+
+		//エラー出力ログ
+		File err_log;
+		//エラー出力ログ
+		if(Defs.error_log.equals("")==false){
+			err_log = new File(Defs.error_log);
+		}
+		else{
+			err_log = new File("/dev/null");
+		}
+    	
+    	//argv[0]=parm;
+
+		//boolean f=false;
+		try{
+			DataOutputStream outs = new DataOutputStream(sock.getOutputStream());
+
+			//Class cls = Class.forName("http_pi.hello_cgi_mod");
+			//Class cls = Class.forName("http_pi."+prog);
+
+			// set up class path to Def.Class_modDir
+			File cf = new File(Defs.class_modDir);
+			URL[] cp = {cf.toURI().toURL()};
+			URLClassLoader urlcl = new URLClassLoader(cp);
+			//Class cls = urlcl.loadClass(prog);
+			Class<?> cls = urlcl.loadClass(prog);
+
+			Object obj = cls.newInstance();
+			
+			//Method md = cls.getMethod("main", String[].class);
+			Method md = cls.getMethod("cgi_go", DataOutputStream.class,String.class,String.class);
+
+			Object args[] = new Object[3];
+
+			//argv= new String[2];
+			//argv[0]="method="+method;
+			//argv[1]="parm="+parm;
+			//argv[3]="sock="+sock;
+
+			args[0]=outs;	// DataOutputStream
+			args[1]=method;	// GET or POST
+			args[2]=parm;		// cgi parameter   [?]param1=xxx&param2=kkk ...
+			if( md != null ){
+            	//System.setOut(sock.getOutputStream());
+				md.invoke(obj,args);
+            }
+		}
+		catch(Exception e){
+			//クラスロードエラー
+			System.out.println("classProcessor:class_ld :#90 e="+e);
+			try {
+				Writer wt =new FileWriter(err_log,true);
+				wt.write("classProcessor:class_ld :#90 e="+e+"\n");
+				wt.close();
+			}
+			catch (IOException e1) {
+				// TODO 自動生成された catch ブロック
+				//e1.printStackTrace();
+				System.out.println("classProcessor:class_ld :#91 e1="+e1);
+			}
+		}
+	}
+}

@@ -1,0 +1,3 @@
+cd /usr/local/src/mjpg-streamer
+./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -r 640x480 -f 30 -n" -o "./output_http.so -p 8080 -c nishi:nishi -w ./www"
+#./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -r 640x480 -f 30 -n" -o "./output_http.so -p 8080 -w ./www"

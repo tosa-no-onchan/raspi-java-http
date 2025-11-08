@@ -1,0 +1,139 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Language" content="ja">
+<title>Raspberry Pi Java Web(http) Server</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body>
+<p>Raspberry Pi Java Web (http) Server</p> 
+Welcome to Raspberry Pi Java Web Server.<br />           
+This java web server's program is written by fully java code,<br />
+then you can have a java program (class or java main program) excute directly<br />
+on the Raspberry pi machine from a remote PC browser.<br />
+Of course, html files and image files viewing are able.<br />
+<br />
+But, viewing the html files and image files are not an main purpose.<br />     
+You can easily develop a java cgi program on a developper machine and easily run java cgi program on a Raspberry pi machine.<br />      
+and develop a java program to access to Raspberry pi hard wear,such as GPIO.<br />      
+and can easily establish Server and Client java program.<br />
+<br />
+And,perl cgi excution is available (v1.4 update 2014.1.26).<br />
+Above,java class pre loading is supported (v1.5 update 2014.1.30).<br />
+I think, class pre loading is a little bit faster than other.<br />
+<br />
+<br />
+Java http server's setting is very simple and prepare of starting is easy.<br />     
+The interface between Java http server and java cgi program is very simple and easy.<br />      
+<br />     
+Target Server machine is  Raspberry Pi (Raspbian).<br />         
+Developping Server machine<br />      
+CentOS 5.X , Eclipse 4.3 and jdk1-7.<br />      
+Developped and written by Net-Mall Tosa.<br />        
+<br>
+<a href="download/">download</a><br />
+<br />
+Including some java cgi samples and a deamon start shell script.<br />      
+1. Hello java cgi<br />      
+2. Led blinking java cgi<br />
+3. Temp sensor java cgi<br />      
+4. Shutdown java cgi. You can shutdown Raspberry pi machine from PC browser      
+(appended 2014.1.14).<br />    
+&nbsp;Edit and change workspace-raspi/nishi-test/src/Shutdown_cgi_mod.java,before compile.<br />    
+&nbsp;	private String yid="xxxx";<br />    
+&nbsp;	private String ypass="xxxx";<br />    
+<br />
+5. init.d  start deamon shell script (http_pid) (appended 2014.1.14).<br />      
+$sudo service http_pid start | stop<br />
+<br />
+Please refer to readme.txt and how-to-deamon.txt.<br />
+<br />
+<br />
+<hr style="color:blue;border-width:1px;" />
+change history<br />
+<br />
+2014.1.14 v1.0<br />
+first release<br />
+<br />
+2014.1.21 v1.1 update 2014.1.21<br />
+java-cgi(main program) loader bug fix.<br />
+a post data will be passed to java-cgi program correctly.<br />
+<br />
+2014.1.23 v1.2 update 2014.1.23<br />
+perl-cgi loader built in.<br />
+<br />
+2014.1.25 v1.3 update 2014.1.25<br />
+perl-cgi CGI.pm,cgi-lib.pl are available.<br />
+<br />
+2014.1.26 v1.4 update 2014.1.26<br />
+1. perl-cgi Cookie is available.<br />
+<br />
+2. server.conf appended<br />
+<br />
+# cgi-bin error log file<br />
+# if undefine,the error's log are put to /dev/null<br />
+#error_log=/home/nishi/workspace-raspi/net/cgi.log<br />
+<br />
+2014.1.27 sample program update<br />
+1. MyLed_cgi.java<br />
+2. Shutdown_cgi_mod.java<br />
+<br />
+2014.1.30 v1.5 update 2014.1.30<br />
+built-in java class (class pre loadding) excuting is available.<br />
+Please refer to how-to-built-in-class.txt<br />
+<br />
+2014.2.2 v1.6 update 2014.2.2<br />
+java-mod(java class) loader puts a error's cause to error-log<br />
+when child's class gets error.<br />
+Please refer to server.conf.<br />
+<br />
+2014.3.2<br />
+fixed http_pid(deamon service start shell) error from insserv.<br />
+runlevel=3 4 5<br />
+<br />
+2015.2.15 v1.7 update<br />
+php script is available.<br />
+<br />
+see server.conf<br />
+#PHP-cgi support -- v1.7<br />
+<br />
+<br />
+2015.3.2 v1.8 update<br />
+java-cgi(main program) interface is changed.<br />
+keep-alive connect is available.<br />
+<br />
+see server.conf<br />
+#keep-alive option --- v1.8<br />
+#buffer option ---- v1.8<br />
+<br />
+2015.10.21 v1.8.1 update<br />
+Bug fix.<br />
+Some browser ,such as android google sends a http request with no data sometime.<br />
+v1.8 hangs up when receives its http request with no data. <br />
+v1.8.1 has been fixed.<br />
+After all,I think,its http request with no data is keep-alive probe packet,isn't it?<br />
+<br />
+2015.10.25 v1.8.1 update<br />
+Bug fix.<br />
+<br />
+<hr style="color:blue;border-width:1px;" />
+<br />
+Attention!<br />
+Please use in private network(Exp. 192.168.1.X) <br />       
+and private use only.<br />       
+This program is non secureable and not sufficiently considred about Thread Safe.<br />       
+Never use as open server,and never in open network.<br />       
+<br />
+Thank you!<br />       
+Net-Mall Tosa.<br />       
+Kochi,Japan.<br />
+e-mail: non@netosa.com<br />    
+Date:2014.1.15<br />
+<br />
+</body>
+
+</html>

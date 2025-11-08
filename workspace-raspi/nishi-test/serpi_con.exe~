@@ -1,0 +1,10 @@
+#!/bin/sh
+# pi4j をインクールードした java の実行 sh
+# sudo ./pi4j_java_test.bat usb_serial_test1
+#
+#cd ~nishi/workspace-raspi/nishi-test
+#cd ~pi-nishi/workspace-raspi/nishi-test
+#java -classpath ./:bin:/opt/pi4j-1.0-SNAPSHOT/lib/'*':$CLASSPATH arduino.serial_pi_con &
+PI4J=/opt/pi4j-1.0-SNAPSHOT/lib/'*'
+export CLASSPATH="./:bin:${PI4J}:${CLASSPATH}"
+java arduino.serial_pi_con &

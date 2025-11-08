@@ -1,0 +1,945 @@
+436F6E74656E742D7479
+70653A20746578742F68
+746D6C200A0AE78FBEE5
+9CA8E38184E3828BE383
+87E382A3E383ACE382AF
+E38388E383AA203A202F
+686F6D652F6E69736869
+2F7777772D7261737069
+2F6367692D62696E3C62
+72202F3E0A48656C6C6F
+207065726C206367693C
+6272202F3E0A2D2D2D2D
+2D2D2D2D2D3C6272202F
+3E0A485454505F414343
+4550545F4C414E475541
+474520EFBC9A206A612C
+656E2D75733B713D302E
+372C656E3B713D302E33
+3C6272202F3E0A485454
+505F4143434550545F45
+4E434F44494E4720EFBC
+9A20677A69702C206465
+666C6174653C6272202F
+3E0A485454505F434F4E
+4E454354494F4E20EFBC
+9A206B6565702D616C69
+76653C6272202F3E0A53
+45525645525F50524F54
+4F434F4C20EFBC9A2048
+5454502F312E313C6272
+202F3E0A524551554553
+545F4D4554484F4420EF
+BC9A204745543C627220
+2F3E0A485454505F4143
+4345505420EFBC9A2074
+6578742F68746D6C2C61
+70706C69636174696F6E
+2F7868746D6C2B786D6C
+2C6170706C6963617469
+6F6E2F786D6C3B713D30
+2E392C2A2F2A3B713D30
+2E383C6272202F3E0A53
+45525645525F534F4654
+5741524520EFBC9A2048
+7474705F70693C627220
+2F3E0A444F43554D454E
+545F524F4F5420EFBC9A
+202F686F6D652F6E6973
+68692F7777772D726173
+70692F68746D6C3C6272
+202F3E0A51554552595F
+535452494E4720EFBC9A
+20746E6F3D303035266D
+6F6D6F3D68656C6C6F3C
+6272202F3E0A48545450
+5F484F535420EFBC9A20
+3139322E3136382E312E
+3135303C6272202F3E0A
+485454505F555345525F
+4147454E5420EFBC9A20
+4D6F7A696C6C612F352E
+3020285831313B204C69
+6E7578207838365F3634
+3B2072763A33312E3029
+204765636B6F2F323031
+30303130312046697265
+666F782F33312E303C62
+72202F3E0A
+
+
+Date: Tue, 18 Mar 2014 16:49:06 GMT
+Server: Apache
+Last-Modified: Tue, 18 Mar 2014 02:17:38 GMT
+ETag: "a026f-be1b-4f4d823d33480"
+Accept-Ranges: bytes
+Content-Length: 48667
+Keep-Alive: timeout=5, max=5000
+Connection: Keep-Alive
+Content-Type: text/html
+----------
+getContentType: text/html
+getContentLength: 48667
+getContentEncoding: null
+getDate: 1395161346000
+getExpiration: 0
+getLastModified: 1395109058000
+----------
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta name="keywords" content="�n����Y�i,���Y�i,���y�Y�i,�Y�n�����i,�Y�n����,�V���b�s���O���[��,�썑�y��,���m��,���̂�����,�͂��݂�,�y�����U,�ʔ�" />
+<meta name="description" content="���m���Y�i�E�y�Y�i�̔��́A�V���b�v�y������Ԃł��B�썑�y���E���m���̒n����Y�i���l�b�g�V���b�s���O�ł���V���b�v�ł��B�V���b�v�}�X�^�[�̂��񂿂�񂪂����߂��銏�̂������A������ҁA�y�����U�A���_���؁A�Y�n���Y�i�ȂǂȂǁB���m�̓��Y�i���C���^�[�l�b�g�ʔ̂ł̃V���b�s���O�ł��y���݉������B" />
+<title>���m���Y�i�E���y�Y�A�����n���Y�i�̔� �V���b�v�y�� �썑���m�̔��������t����!!</title>
+<link rel="stylesheet" type="text/css" href="shop_base.css" />
+<link rel="stylesheet" type="text/css" href="shop_design.css" />
+<link rel="stylesheet" type="text/css" href="shop_comm.css" />
+<link rel="stylesheet" type="text/css" href="shop_wrapper_wide.css" />
+<!-- Ajax���C�u�����[ jQuery -->
+<script type="text/javascript" src ="/ajax/jquery/v1.10.2/jquery-1.10.2.min.js" charset="shift-jis"></script>
+<!-- Ajax���C�u�����[ netosa-jquery-cart-list.js -->
+<script type="text/javascript" src ="/ajax/netosa-jquery-cart-list.js" charset="shift_jis"></script>
+<!-- Ajax���C�u�����[ netosa-sp.js -->
+<script type="text/javascript" src="/ajax/jquery.cookie.js"></script>
+<script type="text/javascript" src="/ajax/judgeua.js"></script>
+<script type="text/javascript" src="/ajax/netosa-sp.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+jq$= jQuery.noConflict();
+
+jq$(document).ready(function(){
+  sp_redirecter();
+});
+
+jq$(function(){
+  jq$.ajaxSetup({
+    timeout:5000
+  });
+  reqCart_list('005');
+});
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="header">
+  <div id="header-inner"></div>
+</div>
+<!-- header end -->
+
+<div id="pagebody" class="pagebody-top">
+
+
+<div id="content-wrapper">
+
+<div id="content-c" class="content">
+
+<h1>�썑���m�̓��Y�i�A���y�Y�i�X�@�V���b�v�y���@�ւ悤�����I�I</h1>
+<img border="0" src="images/shop-tosa_parts_18.jpg" alt="" width="550" height="60" />
+<div id="conte-top">
+<!-- �g�b�v�����ł�!! -->
+<font color="orange">��</font>�g�Q�U�N�R���P�W�� �{��A�J��A���ꂼ�ˁB�c�Ƃ������܂��B<br />
+<!--
+<font color="orange">��</font><b>���m�ό��̂��y�Y�́A���m�֗���O�ɁA�C���^�[�l�b�g�Œ������Ēu���ƁA�A��̉ו������Ȃ��Ċy�`�����ˁI���A�ƂɋA���Ă���C���^�[�l�b�g�Œ������Ă��A�Ԃɍ���Ȃ����ˁI</b><br />
+-->
+�썑���m���̂ǐ^�񒆁A�m����̉͌�߂��Ɉʒu����A�y���s����̓c�ɕ������Ղ�̒n��Y�i�����͂��܂��B�y���̊C�E�R�̍K�̎Y�n�����A�n����Y�i�A���y�Y�i�A�����̓X���ˁI�I�B<br />
+�y���s�ɂ́A�y�����U���˂̒n�̌˔g�i�ւ�j�A���߂̉��H�Ő͓̂��킢��t�������F��������܂��B<br />
+�E�Ă���H�ւ̋G�߂ɂ́A�썑���m���̊C�̍K�A�R�̍K�A��̍K�������߂ł����I�I�B<br />
+�E�y���s�ł́A�����̂������A���I�A�������A���}�����A���U�A���āA�ۂ񂩂�Ȃǈ�t���ˁI�I<br />
+�䂸�I���A���I�I���A�C�m�[�w���̃h���b�V���O�A���I�̏ē�����A���P���s�A�F�����`�b�v�A�y�����U�A�F���̓V�R�A�T���i������j�I�I�Y�n�����A�ʔ̂ł������킦�܂���B<br />
+<br />
+</div>
+
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+  </div>
+  <a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&srecomend_req=1"><img border="0" src="images/shop_tosa-parts-111003-1.jpg" alt="�V���b�v�y���̂�����"  title="�V���b�v�y���̂�����" style="padding-top:10px;padding-bottom:4px;" width="590" height="164" /></a>
+<div style="height:34px;">
+ H26�N�A�t�̖��o�A���m�����Y�i�� �����߂ł��I�I�iby �X���j<br />                                                                                                                                            
+</div>
+</div>
+
+<div id="shinchaku-top"></div>
+<div id="shinchaku-slide">
+<!-- ���m�点���C���ł�!! -->
+<!-- �����N�P��̏��i�������グ�̕�ɁA<a href="/shop_tosa/shohin19.htm">�������</a> �Ȃǂ��P�v���[���g���n�߂܂����B�iH23.12.11�j<br />
+���j�y�����U�A�F���̂�����A���̂������A�Z�b�g���i�i�P�i�����A�N�[���A�Ⓚ�j�́A�����ł��Ȃ��̂ŏ����܂��B<br /> -->
+&gt;H26.1.9..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0444&amp;page=/shop_tosa/">�������E������p����</a> �̔����ł��I<br />
+&gt;H26.1.9..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0443&amp;page=/shop_tosa/">�Ԃ����E�������Ԃ�</a> �̔����ł��I<br />
+&gt;H25.11.26..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0819&amp;page=/shop_tosa/">���т��������Ǝ|�����I����</a> �̔����ł��I<br />
+&gt;H25.11.25..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0440&amp;page=/shop_tosa/">���̓~�̂��Ε�ɁA�l���\�E�y���ǂ�����񂮃Z�b�g</a> �̔����ł��I<br />
+&gt;H25.11.11..<a href="sp/">�X�}�z�E�V���b�v���I�[�v�����܂����I���񂲗��p���������B</a><br />
+&gt;H25.10.29..<a href="/shop_tosa/shohin0313.htm">�~�̂��Ε�A�M�t�g�A�������ɍ��m���̓��Y�i�A�g�Q�T�y���̋l�ߍ��킹</a> �́A�������I<br />
+&gt;H25.10.8..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0815&amp;page=/shop_tosa/">���m�J�c�I�l�ԁE���\��</a> �̔����ł��I<br />
+&gt;H25.10.3..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0816&amp;page=/shop_tosa/">�J�c�I�l�ԁE�N���[���T���h</a> �̔����ł��I<br />
+&gt;H25.9.30..�����䂸�̍��荂���A<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0439&amp;page=/shop_tosa/">�䂸����W���� �ۂ�|</a> �̔����ł��I<br />
+&gt;H25.9.26..���m���Ŋl�ꂽ�V�N�ȂԂ�̐g��<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0818&amp;page=/shop_tosa/">���̂Ԃ肩�� �ݖ�</a> �̔����ł��I<br />
+&gt;H25.9.24..�̉���<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0438&amp;page=/shop_tosa/">�~���[�ƈ������</a> �̔����ł��I<br />
+&gt;H25.9..<a href="/shop_tosa/shohin004.htm">�{�ꍂ�m���� �g�����̂������A�V���b�v�y��</a> �Ŕ̔����ł��B<br />
+
+
+&gt;H25.9.17..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0437&amp;page=/shop_tosa/">�y����{�ނ�P�����X�e�B�b�N����</a> �̔����ł��I<br />
+&gt;H25.9.4..�V�R�����݃G�L�X�ƃI���j�`���z���́A<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0817&amp;page=/shop_tosa/">�����݂̃`�J��</a> �̔����ł��I<br />
+&gt;H25.8.7..�\�t�g�ȐV�H���́A<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0814&amp;page=/shop_tosa/">�����W���[�L�[���I��</a> �̔����ł��I<br />
+&gt;H25.8.6..�����ɗn���������B���m���Y�䂸�A���傤�����g�p <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0433&amp;page=/shop_tosa/">�䂸���傤����</a> �̔����ł��I<br />
+&gt;H25.8.5..��񂲉ʏ`��� <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0813&amp;page=/shop_tosa/">���I�͂��݂�</a> �̔����ł��I<br />
+&gt;H25.8.2..�I�g�i�D�݂̂䂸�h���P�`���b�v <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0436&amp;page=/shop_tosa/">�y���d���� �X�p�C�V�[�P�`���b�v</a> �̔����ł��I<br />
+&gt;H25.8.2..�I�g�i�D�݂̂䂸�����}���l�[�Y <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0435&amp;page=/shop_tosa/">�y���d���� �䂸�}��</a> �̔����ł��I<br />
+&gt;H25.7.29..�����L���ȏݖ��Ŏd�グ�� <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0812&amp;page=/shop_tosa/">�V�C���� �������т̑f</a> �̔����ł��I<br />
+&gt;H25.7.29..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0811&amp;page=/shop_tosa/">�J�c�I�l�ԁE�a���J���[</a> �̔����ł��I<br />
+&gt;H25.2.28..<a href="/shop_tosa/shohin54.htm">�Ƃ��Ă��|���I�l���\���I �ǂ������</a> �̔����ł��I<br />
+&gt;H25.2.20..<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0806&amp;page=/shop_tosa/">���m�̂܂����Ƃ��`�|���A�~���[�r�X�P�b�g�E���ܓ��</a> �̔����ł��I<br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0251&amp;page=/shop_tosa/">�t���t���E������� �̔����ł��I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0803&amp;page=/shop_tosa/">�l���\�쌹�� �����̂��� ����� �̔����ł��I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0421&amp;page=/shop_tosa/">���m�����Y&nbsp;���������J���[���n���V �̔����ł��I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0598&amp;page=/shop_tosa/">���m�̂��L�����A�㓪����������ƋC�����̈����B�J�c�I�l�ԁE�h���b�v�X�E�~���N���̔���</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0597&amp;page=/shop_tosa/">���m�̂��L�����A�㓪����������ƋC�����̈����B���m�J�c�I�l�ԁE�v�����g�N�b�L�[�̔���</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0588&amp;page=/shop_tosa/">���Y �t�肭���� �̔����ł��I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0415&amp;page=/shop_tosa/">���m���Y �y�����������ƕ��U�̃J���[ �̔��������܂��I</a><br />
+&gt;<a href="/shop_tosa/shohin46.htm">��{�ނ�P���� ���ڂ�ρi�䂸�����j�̔����ł��I</a><br />
+&gt;<a href="/shop_tosa/shohin45.htm">�������|�c�n�̔���ʕ��W���� �̔����ł��I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0392&amp;page=/shop_tosa/">�������|�c�n�̃g�}�g�J���[ �̔����ł��I</a><br />
+&gt;<a href="/shop_tosa/shohin41.htm">���m�� ���C�ސ��A�����E���̖��t���߁i�l���j&nbsp;�̔������ˁI</a><br />
+&gt;<a href="/shop_tosa/shohin40.htm" target="_top">�ݖ�𒍂��ŏ@�c���ݖ�ł���A�l���\�܂邲�� ���(����)�̂���&nbsp;�̔����I</a><br />
+&gt;<a href="/shop_tosa/shohin39.htm">�M�q�̎��� �䂸�����A�䂸�p�b�p�b�A�ς��Ɣn�H���A�䂸�J���b�\ �̔����I</a><br />
+&gt;<a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0576&amp;page=/shop_tosa/">���߂������ �@�c�����傤�� �̔����Ă��܂��B</a><br />
+</div>
+
+
+<!-- �R���e���c�̒u���ł�!! -->
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="http://www.netosa.com/shop_tosa/shohin0313.htm"><img border="0" src="/shop_tosa/parts/to-g-shohin0313-100815-2-haru-h26.jpg" alt="�g�Q�U �y���̋l�ߍ��킹" title="�g�Q�U �y���̋l�ߍ��킹" style="padding-top:10px;padding-bottom:4px;" /></a>
+<div style="height:40px;">
+  �g�Q�U���̐V�t�A�t�̃M�t�g�A�������ɓy���̋l�ߍ��킹���ǂ����I<br />
+<span style="font-size:12px;">�l���\�E�y���ǂ�����񂮃Z�b�g�A�y���̓��Y�������l�ߍ��킹�Z�b�g</span><br />
+</div>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <!--
+<a href="http://www.netosa.com/shop_tosa/shohin19.htm"><img border="0" src="/shop_tosa/images/shop_tosa-parts-3_c_1.jpg" alt="������҂Ȃǃv���[���g"  title="������҂Ȃǃv���[���g" style="padding-top:10px;padding-bottom:4px;" /></a><br />
+�����N�P��A���i�������グ�̕�ցA<a href="http://www.netosa.com/shop_tosa/shohin19.htm">�������</a> �Ȃ� �P�v���[���g���n�߂܂����B�iH23.12.11�j<br />
+<span style="font-size:12px;">���j�y�����U�A�F���̂�����A���̂������A�����A�Z�b�g���i�A�i�N�[���A�Ⓚ�A�P�i�����A�P�P�[�X���́j�́A�����ł��Ȃ��̂ŏ����܂��B</span><br /> --->
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="shohin43.htm"><img border="0" src="/shop_tosa/images/to-g-shohin43-parts-111127-1_2b.jpg" alt="�g25-H26�N ���̓~�̂�����" title="�g25-H26�N ���̓~�̂�����" style="padding-top:10px;padding-bottom:4px;" /></a>
+<div style="height:40px;">
+�g�Q�T�]�Q�U�N ���̓~�̂����߂́A�������ł��傤���H<br />
+</div>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="http://www.netosa.com/shop_tosa/shohin19.htm"><img border="0" src="/shop_tosa/images/to-g-shohin19-101104-2w.jpg" alt="���m���Y �������"  title="���m���Y �������" style="padding-top:10px;padding-bottom:4px;" /></a>
+<div style="min-height:34px;">
+�H�̖��o�A���m���Y�i�̈�����҂́A�ǂ����ˁI�I�y���̓`���̖����ˁB<br />
+���ˊC�m�[�w�����g�����A������Ə����߂̉��P���s�A�t���t��������� �L���������e�C�X�g�A����̉����g�����A������ ������ҁB�����x�����Ă݂Ƃ����I
+</div>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="http://www.netosa.com/shop_tosa/shohin004.htm"><img border="0" src="/shop_tosa/images/parts-100407-1b.jpg" alt="�g����������" title="�g����������" style="padding-top:6px;padding-bottom:4px;" /></a>
+<div style="min-height:10px;">
+<span class="color-orange1 ">��<a href="http://www.netosa.com/shop_tosa/shohin004.htm">�g�������̂�����</a> ���̔����I�iH25.9.8�j</span><br />
+<span style="font-size:12px;">�g�Q�T�N&nbsp;�A���悢�捡�N���߂芏�̃V�[�Y���ł��B�|���A���̂̂����g�����̂������������߂��ˁI</span><br />
+</div>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="/shop_tosa/shohin53.htm"><img border="0" src="/shop_tosa/parts/to-g-shohin53-120531-2.jpg" alt="�y���̃J���[" title="�y���̃J���[" style="padding-top:6px;padding-bottom:4px" /></a>
+<div style="min-height:34px;">
+���Y�y���̃J���[�B�D�]�I�y�����������ƕ��U�̃J���[�A�g�}�g�J���[�A���I�̃J���[�A�؂Ƒ哤�Ɛ��I�̃J���[�A���m�̂����n�J���[�́A�������I<br />
+<span style="font-size:12px;">���ɁA�y�����������ƕ��U�̃J���[�́A���������̃u���O�ŏЉ��čD�]�ł��B</span>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin40.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r40-to-g-shohin40-111006-2s3.jpg" alt="�l���\�܂邲�Ɖ�Ƃ̂���" title="�l���\�܂邲�Ɖ�Ƃ̂���" /></a>
+
+  <div class="sg-top-box7-title">
+    
+  </div>
+  �l���\�܂邲�Ɖ��(����)�̂����I�I<br />
+�Ƃɂ��邨�ݖ���������ŁA���肶�Ȃ邾���ݖ�����낤�I�I
+
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin41.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r32-to-g-shohin41-111018-2s3.jpg" alt="�����i���t�����߁j" title="�����i���t�����߁j" /></a>
+
+  <div class="sg-top-box7r-title">
+    
+  </div>
+  ���C�ސ��A����(���t������)�B<br />
+���̖؂����������A����L���Ȋ����߂ł��B<br />
+���m�s�̊����H�̕��C�̐��߂ł��B
+
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin36.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r12-to-g-shohin36-111202-2s3.jpg" alt="���m���䂸���X���낢��" title="���m���䂸���X���낢��" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="orange">��</font><a href="/shop_tosa/shohin36.htm">���m���䂸���X���낢��</a>
+  </div>
+  ���m�����Y�̂䂸�����������݂��ł��B<br />
+�E�k�쑺�䂸�� �X�n�H���M�q�݂� �l���\�̍K�䂸�݂�
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin44.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r16-to-g-shohin44-080516-1s3.jpg" alt="��V���X���낢��" title="��V���X���낢��" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="orange">��</font><a href="/shop_tosa/shohin44.htm">��V���X���낢��</a>
+  </div>
+  �y���̈�V���X�@���낢��ł��B<br />
+�����オ���������̂��тɂ��ĐH�ׂ�΁A����͂������܂�܂�����I
+�E�M�q�A���A�{�B
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin39.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r47-to-g-shohin39-110915-2s3.jpg" alt="�䂸�p�b�p�b�A�ς��Ɣn�H���E�ԓ��h�q�A�䂸�����A�䂸 �J���b�\ �n�H��" title="�䂸�p�b�p�b�A�ς��Ɣn�H���E�ԓ��h�q�A�䂸�����A�䂸 �J���b�\ �n�H��" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="orange">��</font><a href="/shop_tosa/shohin39.htm">�䂸�p�b�p�b�A�ς��Ɣn�H���E�ԓ��h�q�A�䂸����</a>
+  </div>
+  �y���̗M�q�̎������낢��B<br />
+<b class="color-orange1">�䂸�p�b�p�b</b>�A<b class="color-orange1">�ς��Ɣn�H��</b>�ԓ��h�q�A<b class="color-orange1">�䂸����</b>�A<b class="color-orange1">�䂸 �J���b�\</b>�n�H���B
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin46.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r46-to-g-shohin46-120604-2s3.jpg" alt="�䂸�����ƁA���΂�����" title="�䂸�����ƁA���΂�����" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="orange">��</font><a href="/shop_tosa/shohin46.htm">�y���̈�{�ނ�P����</a>
+  </div>
+  ���ꂼ�y���̋��@�@�y����{�ނ�P�����B �y���������̊���{�ނ�ŕ߂ꂽ�A�@�c�����i���W�J�j���������A�P�����X�e�C�b�N�A���ڂ�ρB����́A�|���I
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin10.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r08-to-g-shohin10-100119-2s3.jpg" alt="�y���̂͂��݂@�䂸�I���A���I�I��" title="�y���̂͂��݂@�䂸�I���A���I�I��" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="salmon">��</font><a href="/shop_tosa/shohin10.htm">�y���̂͂��݂@�䂸�I���A���I�I��</a>
+  </div>
+  �y�����Y�̂䂸�Ɛ��I��I���i�͂��݂j�Ƀu�����h�B<br />
+���ׂȂǂɜ�����Ƃ��́A���I���I���������ɓ��Ĉ�ނ̂́A�������ł��傤���I�I<br />
+�M�q�I�����A�M�q�̖������āA�܂�����ł��I�I
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin22.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r30-shop-tosa_goods_2s3.jpg" alt="���m�����Y�@�r㻂��낢��" title="���m�����Y�@�r㻂��낢��" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="salmon">��</font><a href="/shop_tosa/shohin22.htm">���m�����Y�@�r㻂��낢��</a>
+  </div>
+  ���m���̐H�ނ𐶂������r㻂��A���낢�날�邼�ˁB<br />
+�܂邲�ƗM�q�r㻁A�y�����U�悤����A���I�悤����A�䂸�悤����A�I�悤����B���񌩂Ă����Ƃ����I�I<br />
+<span class="color-red2">���썑�y���E���m���Y�i�B</span><br />
+
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin23.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r18-to-g-shohin23-101002-3s3.jpg" alt="���m�����Y �Ă��������낢��" title="���m�����Y �Ă��������낢��" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="salmon">��<a href="/shop_tosa/shohin23.htm">���m�����Y �Ă��������낢��</a></font>
+  </div>
+  �y���̊��̓��Y�i���ˁB�܂����Ǝ|�����ˁB<br />
+�E�@�c���� ���̂܂�܂܂邩����A�Ă����A�P�����p�ρB
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin21.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r28-to-g-shohin21-101029-2s3.jpg" alt="�y�����Y�̊����H�i�B" title="�y�����Y�̊����H�i�B" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="orange">��<a href="/shop_tosa/shohin21.htm">�y�����Y�̊��̉��H�i�B</a></font>
+  </div>
+  �����Ӗ��i�ܓ��j ��������߂�<br />
+�������Ђ� �~�ӂ肩��<br />
+
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin11.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r01-to-g-shohin11-080529-1s3.jpg" alt="" title="" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="orange">��<a href="/shop_tosa/shohin11.htm">�y���̓��Y�i�@�߂��ǂ�ڂ��A�䂸���A�����̂��܎ρA���̑�</a></font>
+  </div>
+  �E�߂��ǂ�ڂ� �A�䂸�� �A�����Ӗ� �A�͂��݂䂸<br />
+�E�䂸���Ӟ� �A�䂸�� �A�����̂��܎� �Ȃ� <br />
+<b class="color-orange1">���y���̓��Y�i�������ς��ł��B</b><br />
+
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin16.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r09-to-g-shohin16-090402-1s3.jpg" alt="�y�����Y�̂͂�����n�{�̃J���[�A�������݂��т̑f�B" title="�y�����Y�̂͂�����n�{�̃J���[�A�������݂��т̑f�B" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="orange">��<a href="/shop_tosa/shohin16.htm">�y�����Y�̂͂�����n�{�̃J���[�A�������݂��т̑f�B</a></font>
+  </div>
+  �E�͂�����n�{�̐������݂��т̑f�@���،ܖځA�a���ܖ�<br />
+�E�͂�����n�{�̃`�L���J���[�A�~���`�J���[�A�J���[���ǂ�̑f <br />
+<p class=" text17 color-red2 ">���y���Ő��܂ꂽ�n�{�@�y���͂�����n�{���ˁI�I</p>
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box7">
+        <a href="/shop_tosa/shohin26.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r38-to-g-shohin26-099731-3s3.jpg" alt="���m�̃W���[�X" title="���m�̃W���[�X" /></a>
+
+  <div class="sg-top-box7-title">
+    <font color="salmon">��</font><a href="/shop_tosa/shohin26.htm">���m���Y�̉ʕ��W���[�X</a>
+  </div>
+  ���ɏ������̉ĂɁA���m�����Y�̉ʕ��̃W���[�X�͂��������ˁB�ڈ�t��₵�Ĉ��ǂ����B<br />
+�E�䂸�̍���A���U�̎���B
+</div>
+<div class="sg-top-box7r">
+        <a href="/shop_tosa/shohin35.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r39-to-g-shohin35-100830-2s3.jpg" alt="��[���@������L��������" title="��[���@������L��������" /></a>
+
+  <div class="sg-top-box7r-title">
+    <font color="salmon">��</font><a href="/shop_tosa/shohin35.htm">���m���Y�̗M�q�W���[�X</a>
+  </div>
+  �E��[��<br />
+�͂��݂��E�Z�k�M�q��<br />
+�E������L��������
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="/shop_tosa/shohin32.htm"><img border="0" src="/shop_tosa/parts/to-g-shohin32-parts-110701-4.jpg" alt="�y���̉ʎ��[���[�l�ߍ��킹" title="�y���̉ʎ��[���[�l�ߍ��킹" style="padding-top:6px;padding-bottom:4px" /></a>
+<div style="min-height:34px;">
+ �g�Q�U�N ���̏t�A�ẴM�t�g�A�������ɁA�y���̉ʎ��[���[�l�ߍ��킹�́A�ǂ����ˁI ��A�������A�M�t�g�̎�t���B<br />
+</div>
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin31.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r13-to-g-shohin31-100702-1s.jpg" alt="���n�̗܁i�t�̂䂸�����傤�j" title="���n�̗܁i�t�̂䂸�����傤�j" /></a>
+
+  <div class="sg-top-box3-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin31.htm">���n�̗܁i�t�̂䂸�����傤�j</a></font>
+  </div>
+  �E<b>���n�̗܁i�t�̂䂸�����傤�j</b><br />
+�@���m���Y�M�q���g���Ă��܂��B<br />
+�E<b>�䂸��</b><br />
+�E<b>�l���\���傤�� ���_��</b><br />
+
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="http://www.netosa.com/shop_tosa/shohin29.htm"><img border="0" src="/shop_tosa/images/shop-tosa_goods_6.jpg" alt="���n�̂��َq" title="���n�̂��َq" style="margin-top:20px;" /></a>
+</div>
+<div class="sg-top-box5">
+  <div class="sg-top-box5-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin32.htm">���m�����Y �y���̉ʎ��[���[</a></font>
+  </div>
+  <div class="sg-top-box5-conte">
+          <a href="/shop_tosa/shohin32.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r04-to-g-shohin32-100622-1t.jpg" alt="���m�����Y �y���̉ʎ��[���[" title="���m�����Y �y���̉ʎ��[���[" /></a>
+
+    ���m���̓��Y�́@�ʎ��A�ʕ��̃[���[<br />
+�����ĂɁA��₵�����������ʕ��[���[�͂������ł����H<br />
+�y�����U�A�y���g�}�g�A���I�A�ۂ񂩂�A�䂸�A�R���A�V�����A����[���[�B<br />
+<br />
+
+  </div>
+</div>
+<div class="sg-top-box5">
+  <div class="sg-top-box5-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin15.htm">�y�����Y�ޗ����g��������ׂ�</a></font>
+  </div>
+  <div class="sg-top-box5-conte">
+          <a href="/shop_tosa/shohin15.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r19-to-g-shohin15-080905-1t.jpg" alt="�y�����Y�ޗ����g��������ׂ�" title="�y�����Y�ޗ����g��������ׂ�" /></a>
+
+    �E�y���W���[���܂�����ׂ�<br />
+�E�ЂƂ����䂸����ׂ�<br />
+���������ˁI�I���ׂƁ[���B
+  </div>
+</div>
+<div class="sg-top-box2">
+  <div class="sg-top-box2-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin13.htm">�y���̓��Y�ʕ��[���[���낢��</a></font>
+  </div>
+        <a href="/shop_tosa/shohin13.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r21-to-g-shohin13-080831-1s-2.png" alt="�y���̓��Y�ʕ��[���[���낢��" title="�y���̓��Y�ʕ��[���[���낢��" /></a>
+
+  �E���m���̉ʎ� ��܂����[���[<br />
+�E�䂸�[���[<br />
+�E�|���J���[���[<br />
+�E�y�����U�[���[<br />
+
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <map name="FPMap0" id="FPMap0"><area href="http://www.netosa.com/shop_tosa/shohin17.htm" coords="43, 17, 115, 100" shape="rect" alt="������y����" title="������y����" /><area href="http://www.netosa.com/shop_tosa/shohin17.htm" coords="154, 22, 226, 100" shape="rect" alt="�~�J���[" title="�~�J���[" /><area href="http://www.netosa.com/shop_tosa/shohin11.htm" coords="272, 23, 339, 101" shape="rect" alt="�����Ӗ�" title="�����Ӗ�" /></map><img border="0" src="/shop_tosa/parts/DSC01281-1.jpg" usemap="#FPMap0" width="530" height="115" style="margin-top:10px;" alt="" />
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin12.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r11-to-g-shohin12-080906-2t.jpg" alt="�y�����Y�@���̂܂�܂䂸�A�Ӗ������Ăۂ�A�Ԃ����������|" title="�y�����Y�@���̂܂�܂䂸�A�Ӗ������Ăۂ�A�Ԃ����������|" /></a>
+
+  <div class="sg-top-box3-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin12.htm">�y�����Y�@���̂܂�܂䂸�A�Ӗ������Ăۂ�A�Ԃ����������|</a></font>
+  </div>
+  �y�����Y�̂䂸�A�C�m�[�w�����A���I���g��������A�h���b�V���O�B�Ȃǂł��B<br />
+�E�䂸���炵�ۂ�|<br />
+�E�䂸���鉖����<br />
+�E�Ԃ����������|�i���킹�|�j<br />
+�E�Ӗ������Ăۂ�<br />
+�E���̂܂�܂䂸�i�����A�䂸�ʏ`�j
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin0303-06.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r07-to0303-06s.jpg" alt="�y�����Y�@���̂������̂���A�ē��̂���A�h���b�V���O" title="�y�����Y�@���̂������̂���A�ē��̂���A�h���b�V���O" /></a>
+
+  <div class="sg-top-box3-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin0303-06.htm">�y�����Y�@���̂������̂���A�ē��̂���A�h���b�V���O</a></font>
+  </div>
+  �y�����Y�̐��I�ē�����B<br />
+���ˊC�m�[�w�������䂸�g�p�̉�����B<br />
+�Ӗ������I�̃h���b�V���O�B<br />
+���̂���������@�Ȃǂł��B
+</div>
+<div class="sg-top-box2">
+  <div class="sg-top-box2-title">
+    <font color="salmon" size="3">��<a href="/shop_tosa/shohin18.htm">�y�����Y�̂ɂ��船�A�M�q���A�R�����A�M�q�����A�Ē��~�B</a></font>
+  </div>
+        <a href="/shop_tosa/shohin18.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r24-to-g-shohin18-090508-1s-b.png" alt="�y�����Y�̂ɂ��船�A�M�q���A�R�����A�M�q�����A�Ē��~�B" title="�y�����Y�̂ɂ��船�A�M�q���A�R�����A�M�q�����A�Ē��~�B" /></a>
+
+  �E�Ē��~�B<br />
+�E�M�q�����B<br />
+�E���c�ɂ��船�B<br />
+�E�y�� �M�q���B<br />
+�E�y�� �R����
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="http://www.netosa.com/shop_tosa/shohin007.htm"><img border="0" src="/shop_tosa/images/shop-tosa_buntan_5c.jpg" alt="���̔Z���[�����̂�y�����U�̔�"  title="���̔Z���[�����̂�y�����U�̔�" style="margin-top:4px;" /></a><br />
+
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin007.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r03-buntan-080306-DSC00399-t2.jpg" alt="���̔Z���[���@�I�n���@�y�����U �I�I" title="���̔Z���[���@�I�n���@�y�����U �I�I" /></a>
+
+  <div class="sg-top-box3-title">
+    <font size="3" color="orange">��<a href="/shop_tosa/shohin007.htm">���̔Z���[���@�x�̂�n���@�y�����U �I�I</a></font>
+  </div>
+  <b class="color-red2">�R��������̔��� �x�̂�n���@�y�����U�ł��B��ԍ̂�̕��U�́A����ł��B�̔��I���ł��I�I</b><br />
+<br />
+�y���s�� <b>�R�̉ʎ���</b> �ň�Ă�<b>�y�����U</b>�ł��B<br />
+�̂�}�������A�R�̂ނ�ł�������ǂ��n���������U�ł��B�܂�����<b>���̔Z���[���y�����U</b>���ˁI�I<br />
+�̂Ȃ���̏o�׎��������Ă̔̔��ł��B���܂���<b>������</b>�����ł��B<br />
+<b class="color-red2">�I�n���̓y�����U�́A�R�����炪�Â����̂��Ă��Ė{�i�V�[�Y���ɂȂ�܂��B</b>
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin002.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r15-LAB509-1.jpg" alt="�̊��߂ŗL���ȉF���i�����AUSA)�ł��B" title="�̊��߂ŗL���ȉF���i�����AUSA)�ł��B" /></a>
+
+  <div class="sg-top-box3-title">
+    ���́A�̊��߂ŗL���ȉF���i�����AUSA)�̎ʐ^�ł��B
+  </div>
+  <span style="line-height: 130%;">�F���́A�F���p�̓���ɑ񂯂����ŁA���̎ʐ^�̂����E���A��O�ɂ́A�r�C�����񂹂鑾���m������B<br />
+�������ɂ́A�F���p���A�i���Ƒ����Ă��܂��B<br />
+<br />
+���傤�ǂ��̕ӂ́A�p�̓���ŁA�����ɂ�钪�̗��ꂪ�A��ԑ傫���Ƃ���ł��B <br />
+<br />
+���̂������ł́A�F���̋��t�̃A�T���Ƃ�ŁA���������Ă��܂��B<br />
+<br />
+<br />
+�F���̉ԉΑ�������܂��B<br />
+�ʐ^����������ɂ��鋛������̊�������ƌ����b������܂��B</span><br />
+
+</div>
+<div class="sg-top-box3">
+        <a href="/shop_tosa/shohin002.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r02-P8220368-1s.jpg" alt="�F���̓V�R������" title="�F���̓V�R������" /></a>
+
+  <div class="sg-top-box3-title">
+    <font color="orange" size="3">��<a href="/shop_tosa/shohin002.htm">�F���̓V�R������̔�</a></font>
+  </div>
+  <font color="firebrick">���X�������߁I�I</font><br />
+���m�s���琼�ցA�Q�O�j���B�����m�̍r�g�����ꍞ�މF���p<br />
+�̎�ꂽ�Ă̓V�R�̂�����E�A�T���ł��B<br />
+���̔Z�����Ⴂ�܂��i�Z��Ȗ��j�I�I<br />
+�F���̃A�T���́A���m�̒n���ł́A�ق�ƂɗL���ł��B�X���̂��΂�������̂悤�Ɍ����Ă��܂��B<br />
+���Ј�x�H�ׂĂ݂Ă��������B<br />
+<font color="firebrick">�V�[�Y���́A�t�ł��B</font>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="/shop_tosa/shohin42.htm"><img border="0" src="/shop_tosa/parts/to-g-shohin42-parts-111024-1.jpg" alt="���m���Y �������U"  title="���m���Y �������U" style="padding-top:10px;padding-bottom:4px;" /></a>
+<div style="height:14px;">
+ H24 �H�̖��o�B���m���Y�i�� �Ƃ��Ă����X�����������U�I�I�iH24.10.2 by �X���j<br />
+</div>
+</div>
+<div class="sg-top-box2">
+  <div class="sg-top-box2-title">
+    <span class="color-orange1 ">��<a href="/shop_tosa/shohin42.htm">�g�Q�S�N�H �����i�����j���U</a> </span>
+  </div>
+        <a href="/shop_tosa/shohin42.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r10-to0010-061013-2t2.jpg" alt="�g�Q�S�H �y�� �����i�����j���U" title="�g�Q�S�H �y�� �����i�����j���U" /></a>
+
+  �g�Q�S�N�H�@�y���s�k���Y�@�����i�����j���U�ł��I�I�B<br />
+�����ς肵���Â��ƁA�u�₩�Ȍ㖡�̗ǂ��́A
+�܂��ɖ����̕�΁A�X�������߂ł��B���񂨎������������B<br />
+���U���˂̒n�@�y���s�˔g�i�ւ�j�ƕ���ŁA���U�̎Y�n�@�y���s�k���Y�̕��U�ł��B<br />
+</div>
+<div style="clear:both;"></div>
+<div class="sg-top-box5">
+  <div class="sg-top-box5-title">
+    <font color="orange" size="3">��<a href="/shop_tosa/shohin003.htm">�y�����Y�̐V����</a></font>
+  </div>
+  <div class="sg-top-box5-conte">
+          <a href="/shop_tosa/shohin003.htm"><img border="0" src="/shop_tosa/up-images/sg-005-r05-P9280391-1s.jpg" alt="�y�����Y�̐V����" title="�y�����Y�̐V����" /></a>
+
+    �����_���̎Y�n�����ł��B<br />
+���Ƃꂽ���̓�ɑ���܂��B<br />
+<br />
+<b><font color="#f69b1a">�Ƃ��Ă��Ƃ��Ă����������ł��B�i�V�[�Y���́A�X�����@����P�O�����@�ł��B�j</font></b><br />
+<br />
+
+  </div>
+</div>
+<div class="sg-top-box1">
+  <div class="sg-top-box1-title">
+    
+  </div>
+  <a href="/shop_tosa/shohin52.htm"><img border="0" src="/shop_tosa/parts/to-g-shohin52-130307-2.jpg" alt="�y���̐Ԃ����E�ɂ�ɂ�" title="�y���̐Ԃ����E�ɂ�ɂ�" style="padding-top:6px;padding-bottom:4px" /></a>
+<div style="height:34px;">
+���m���̓��Y�i�B���m�̂�����No.1 �y���̐Ԃ����E�ɂ�ɂ��A�y���̐Ԃ����E���̂� �͂������I<br />
+</div>
+</div>
+                                                                                                                                             
+
+
+<!-- �X�ܒǉ����R���e���c�ł�!! -->
+<div id="page-add-info">
+
+<div id="shop-add-info-souryo-outer">
+<div id="shop-add-info-souryo-top"></div>
+<div id="shop-add-info-souryo">
+  <h4>�ʏ푗�� �T�O�O�~</h4>                                                                                                                                           
+  <div id="shop-add-info-souryo-aten">�����́A�S�č���̈����ł��B�ʏ�Ƃ�����A���̂������A���U�A�}���S�[�Ƃ́A�ʌ�ƂȂ�܂��B<br />
+    �ʏ�ƁA�����i�N�[���j�́A�����ł���ꍇ�́A�N�[���ւƂȂ�܂��B�����ł��Ȃ��ꍇ�́A�ʌ�ƂȂ�܂��B</div>
+  <ol>
+    <li>&nbsp;�ʏ� �T�O�O�~ �i�䂤�p�b�N�j<br />                                                                                                                                                   
+      ���A���A����A�k�C���́A�W�T�O�~�B�l���́A�S�O�O�~�B
+    </li>
+    <li>�N�[�� �U�X�O�~&nbsp;�i�䂤�p�b�N�`���h�j<br />                                                                                                                                             
+      �i�����A����ŁE�N�[���������݁j<br /> 
+      ���A���A����A�k�C���́A�P�A�O�S�O�~�B�l���́A�T�X�O�~�B<br />
+    </li>
+    <li>���̂������̃N�[���i�Ⓚ�j�P�A�O�O�O�~<br />
+      �i��z�ցA����ŁE�N�[���������݁j<br /> 
+    </li>
+    <li>����}���S�[ �P�A�O�T�O�~<br />                                                                                                                                                
+      &nbsp;�i��z�ցA�S���ꗥ�j<br />
+    </li>
+  </ol>
+</div>
+<div id="shop-add-info-souryo-bottom"></div>
+</div>
+
+<div id="shop-add-info-shiharai">
+<img border="0" src="images/shop-tosa_parts_15.png" width="187" height="245" alt="" />
+</div>
+
+</div>
+
+
+
+</div>
+<!-- content end -->
+
+<!-- content-side start -->
+<div id="content-side">
+<p style="margin-bottom:8px;"><img border="0" src="images/netosa-parts-120423-3.jpg" width="115" height="111" alt="" /></p>
+
+<div class="conte-side-syohin-box1">
+  <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0425&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0425-130228-1u2.jpg" title="�l�����܂˂� �ǂ������" alt="�l�����܂˂� �ǂ������" width="115" height="172" /></a>
+ <p>��D�]�I �l�����܂˂� �ǂ������</p>                                                                                                                                                                       
+</div>
+<div class="conte-side-syohin-box1">
+  <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0251&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0251-121219-1u2.jpg" title="���m�t���t���������" alt="���m�t���t���������" width="115" height="172" /></a>
+ <p>���m���Y�t���t��������ҁE�L�����������B�ӂ�ӂ肵�Ă���H�ׂĂ݂āI</p>                                                                                                                                    
+</div>
+<div class="conte-side-syohin-box1">
+  <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0803&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0803-121225-1u2.jpg" title="�l���\�쌹�� �����̂��� �����" alt="�l���\�쌹�� �����̂��� �����" width="115" height="172" /></a>
+ <p>�l���\�쌹�� �����̂��� �����</p>                                                                                                                                      
+</div>
+<div class="conte-side-syohin-box1">
+  <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0597&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0597-120912-1u2.jpg" width="115" height="172" title="���m�J�c�I�l�� �v�����g�N�b�L�[" alt="���m�J�c�I�l�� �v�����g�N�b�L�[" /></a>
+ <p>���m�J�c�I�l�� �v�����g�N�b�L�[�ł��B</p>
+</div>
+<div class="conte-side-syohin-box1">
+  <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0599&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0599-120927-1u2.jpg" width="115" height="172" title="��{�ނ肤��߂��킵�̃I�C���T�[�f�B��" alt="��{�ނ肤��߂��킵�̃I�C���T�[�f�B��" /></a>
+ <p>��{�ނ肤��߂��킵�̃I�C���T�[�f�B���ł��B</p>
+</div>
+<div class="conte-side-syohin-box1">
+ <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0410&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0410-120220-1u2.jpg" width="115" height="172" title="��{�ނ�P���� ���ڂ�ρi�䂸�����j" alt="��{�ނ�P���� ���ڂ�ρi�䂸�����j" /></a>
+ <p>�P�����i�@�c���j�̂��ڂ�ρi�䂸�����j�ł��B</p>
+</div>
+<div class="conte-side-syohin-box1">
+ <a href="/cgi-bin/netosa/cart/user/stock_display.cgi?tno=005&amp;sno=0392&amp;page=/shop_tosa/index.htm"><img border="0" src="images/to0392-120118-1u2.jpg" title="�g�}�g�J���[" alt="�g�}�g�J���[" width="115" height="172" /></a>
+ <p>�t���[�c���̉ʎ�����������J���[�ł��B�W���������邼�ˁI</p>
+</div>
+
+
+</div>
+<!-- content-side end -->
+
+
+</div>
+<!-- content-wrapper end -->
+
+
+<div id="navigation" style="margin-top:5px;">
+  <div id="navi-box">
+    <p id="navi-top"><a href="index.htm"><img border="0" src="images/shop_tosa_navi1.png" alt="�V���b�v�y���g�b�v" title="�V���b�v�y���g�b�v" width="160" height="25" /></a></p>
+
+    <p id="navi-recomend"><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;srecomend_req=1"><img border="0" src="images/shop_tosa_navi7.png" width="160" height="47" alt="������" title="������" /></a></p>
+
+  <div id="category_navi_form">
+  <form method="post" action="/cgi-bin/netosa/cart/user/stock_list.cgi">
+    <input alt="�������ꗗ" title="�������ꗗ" src="images/netosa_navi_search.png" name="go_search" type="image" id="go_search" style="width:150px;height:22px;" />
+    <input type="text" name="search_req" id="search_req" style="width:140px;" /> 
+    <input type="hidden" name="tno" value="005" /> 
+  </form>
+  </div>
+  <!--  �J�e�S���[ -->
+  <div id="category_navi_box_top"></div>
+  <div id="category_navi_box">
+    <ul id="category_navi">
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=8">�������E�l����</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=16">�~�̂��E��</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=11">���m�̓�A����</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=10">���Y������</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=6">��ݕ�</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=12">���m�̐��I�E�g�}�g</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=7">�����E�~</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=4">�c�ɂ̂��َq</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=14">���m�̗M�q�E�䂸</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=5">�����ȉ��H�H�i</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=1">����ʕ�</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=3">���E�L�E�̂葼</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=15">�Ă̎|������</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=2">�V�N���</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=9">���N�H�i</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=13">���k�A���}</a></li>
+      <li><a href="/cgi-bin/netosa/cart/user/stock_list.cgi?tno=005&amp;scno_req=-1">���̑�</a></li>
+    </ul>
+  </div>
+  <div id="category_navi_box_bottom"></div>
+
+    <!-- �X�}�z -->
+    <p style="margin:10px 0 0 0;"><a href="sp/"><img src="images/netosa-navi-mobail-131111-2.jpg" width="160" height="50" alt="�X�}�z�V���b�v�́A������I" title="�X�}�z�V���b�v�́A������I" /></a></p>
+
+    <p id="navi-about-shop"><a href="about-shop.htm"><img border="0" src="images/shop_tosa_navi4.png" alt="�X�܂ɂ���" title="�X�܂ɂ���" /></a></p>
+    <p id="navi-about-shopping"><a href="about-shopping.htm"><img border="0" src="images/shop_tosa_navi2.jpg" width="160" height="25" alt="�V���b�s���O�ɂ���" title="�V���b�s���O�ɂ���" /></a></p>
+    <p id="navi-check"><a href="/cgi-bin/netosa/cart/user/cart_entry.cgi?tno=005&amp;func=check_out&amp;page=/shop_tosa/index.htm"><img border="0" src="images/shop_tosa_navi6.jpg" alt="�J�[�g�̐��Z" title="�J�[�g�̐��Z" width="160" height="25" /></a></p>
+
+  <!-- �J�[�g���g�̕\�� -->
+  <div id="cart_list_box">
+    �J�[�g�̒���&nbsp;<!-- <input type = "button"  name="go_cart_list" VALUE = "�ĕ\��" onClick="reqCart_list('005')"> --><br />
+    <hr style="border-color:#f96611" />
+    <ul id="cart_list">
+      <li>&nbsp;</li>
+<!--      <li>�y�����U�~1</li> -->
+    </ul>
+    <div id="cart_list_total">���v�F\0</div>
+  </div>
+
+    <p id="navi-fax-order"><a href="/cgi-bin/netosa/cart/user/fax_order.cgi?tno=005" target="_blank"><img border="0" src="images/shop_tosa-parts-120630-1.jpg" width="160" height="96" alt="FAX�Œ���" title="FAX�Œ���" /></a></p>
+    <p id="navi-mall"><a href="/index.htm"><img border="0" src="images/net-mall_navi2.jpg" width="140" height="60" alt="�l�b�g���[���y��" title="�l�b�g���[���y��" /></a></p>
+  </div>
+  <!--  navi-box end  -->
+
+
+  <div class="custmer-atten-top">
+    <img border="0" src="images/shop-tosa_parts_16.png" width="160" height="144" alt="" title="" />
+  </div>
+  <div class="custmer-atten">
+    �󒍃��[���ɕԐM���������Ɍf�ڂ��Ă��܂��B�f�ڂ���Ȃ���́A<span class="custmer-atten-strong">�󒍃��[�������̂܂ܕԐM</span>���Ă��������i�K���ԐM���Ƃ����I�j�B
+  </div>
+  <div class="custmer">
+<!-- �w��҃R���e���c�̒u���ł�!! -->
+<p>���m�s�@�X�c�l<br />
+�����݂̃`�J���@�̂��������肪�Ƃ�������܂��B�i�R���P�R��j</p>
+<p>�{�錧�@����l<br />
+�t���t��������҃L���������e�C�X�g�@�̂��������肪�Ƃ�������܂��B�i�R���W��j</p>
+<p>�O�d���@�ΐ�l<br />
+��ۖ{�܂䂸���@���̂��������肪�Ƃ�������܂��B�i�R���W��j</p>
+<p>�ΐ쌧�@��Y�l<br />
+�t���t��������҃L���������e�C�X�g�@�̂��������肪�Ƃ�������܂��B�i�R���U��j</p>
+<p>�������@�R��l<br />
+�l���\�܂邲�Ɖ�Ƃ̂����i���߁j�@�̂��������肪�Ƃ�������܂��B�i�R���S��j</p>
+<p>���Ɍ��@����l<br />
+�ۂ��ƗM�q�r㻁@�̂��������肪�Ƃ�������܂��B�i�R���S��j</p>
+<p>�{�錧�@���V�l<br />
+�Ă��傤���@���̂��������肪�Ƃ�������܂��B�i�R���R��j</p>
+<p>���m���@�����l<br />
+���m�J�c�I�l�ԃv�����g�N�b�L�[�@�̂��������肪�Ƃ�������܂��B�i�R���R��j</p>
+<p>�򕌌��@�����l<br />
+�����݂̃`�J���@�̂��������肪�Ƃ�������܂��B�i�R���Q��j</p>
+<p>�����s�@�؉��l<br />
+�y���̂܂�����E�l���\�Z�b�g�@�̂��͂̂��������肪�Ƃ�������܂��B�i�Q���Q�W��j</p>
+<p>�����s�@���}���l<br />
+�y���̉ʎ��[���[�E����[���[�@���̂��������肪�Ƃ�������܂��B�i�Q���Q�S��j</p>
+<p>��ʌ��@���[�l<br />
+�@�c�������̂܂�܂܂邩����@�̂��������肪�Ƃ�������܂��B�i�Q���Q�Q��j</p>
+<p>���{�@���c�l<br />
+�l���\���܂˂��ǂ�����񂮁@���̂��������肪�Ƃ�������܂��B�i�Q���Q�P��j</p>
+<p>���m���@���l<br />
+�g�����������@�̂��͂̂��������肪�Ƃ�������܂��B�i�Q���Q�O��j</p>
+<p>���Q���@�񑺗l<br />
+�l���\���I�ǂ�����񂮁@���̂��������肪�Ƃ�������܂��B�i�Q���P�W��j</p>
+<p>�X���@�`��l<br />
+�y���̉ʎ��[���[�E�g�}�g�[���[�@���̂��������肪�Ƃ�������܂��B�i�Q���P�O��j</p>
+<p>���ꌧ�@����l<br />
+�l���\�E�y���ǂ�����񂮃Z�b�g�@���̂��������肪�Ƃ�������܂��B�i�Q���U��j</p>
+<p>���{�@�����l<br />
+���������͂�̂���@�̂��������肪�Ƃ�������܂��B�i�Q���S��j</p>
+<p>�����s�@�J��l<br />
+�䂸���鉖����@�̂��������肪�Ƃ�������܂��B�i�Q���S��j</p>
+<p>�����s�@�k�o�l<br />
+��L�̌�Β��@�̂��������肪�Ƃ�������܂��B�i�P���Q�V��j</p>
+<p>���Ɍ��@�g�֗l<br />
+�y���̂܂�����E�l���\�Z�b�g�@���͂̂��������肪�Ƃ�������܂��B�i�P���Q�R��j</p>
+<p>���Ɍ��@����l<br />
+�ۂ��ƗM�q�r㻁@�̂��������肪�Ƃ�������܂��B�i�P���Q�Q��j</p>
+<p>�a�̎R���@�g�c�l<br />
+�@�c�����傤��@�̂��������肪�Ƃ�������܂��B�i�P���Q�P��j</p>
+<p>�����s�@�i���l<br />
+������������ҁ@���̂��������肪�Ƃ�������܂��B�i�P���P�V��j</p>
+<p>��t���@�N��l<br />
+�M�q���炵�ۂ�|�@���̂��������肪�Ƃ�������܂��B�i�P���P�T��j</p>
+<p>���m���@�M�l<br />
+�l���\�܂邲�Ɖ�Ƃ̂����i���߁j�@���̂��������肪�Ƃ�������܂��B�i�P���P�S��j</p>
+<p>�����s�@�x��l<br />
+���܃`�b�v�@���͂̂��������肪�Ƃ�������܂��B�i�P���V��j</p>
+<p>���m�s�@�X�c�l<br />
+�����݂̃`�J���@�̂��������肪�Ƃ�������܂��B�i�P���U��j</p>
+<p>�������@�֓��l<br />
+�l���\�쌹�������̂������@���̂��������肪�Ƃ�������܂��B�i�P�Q���R�O��j</p>
+<p>�Ȗ،��@�ΐ�l<br />
+�y���E�l���\�Ă���̂����ݖ�@�̂��������肪�Ƃ�������܂��B�i�P�Q���R�O��j</p>
+<p>���Ɍ��@�k���l<br />
+�y���d���Ă䂸�}���@���̂��������肪�Ƃ�������܂��B�i�P�Q���Q�V��j</p>
+<p>��ʌ��@�ߓc�l<br />
+�@�c�����傤��@���̂��������肪�Ƃ�������܂��B�i�P�Q���Q�U��j</p>
+<p>�����s�@�����l<br />
+�l���\���܂˂��ǂ�����񂮁@�̂��������肪�Ƃ�������܂��B�i�P�Q���Q�T��j</p>
+<p>���Ɍ��@�g�֗l<br />
+�y���̂܂�����E�l���\�Z�b�g�@���͂̂��������肪�Ƃ�������܂��B�i�P�Q���Q�S��j</p>
+<p>�������@���v�l<br />
+���܃`�b�v�@���̂��������肪�Ƃ�������܂��B�i�P�Q���Q�P��j</p>
+<p>�����s�@����l<br />
+�l���\�܂邲�Ɖ�Ƃ̂����i����j�@�̂��������肪�Ƃ�������܂��B�i�P�Q���P�W��j</p>
+<p>�����s�@�n�ӗl<br />
+������ҁ@�̂��������肪�Ƃ�������܂��B�i�P�Q���P�T��j</p>
+<p>���m���@�T��l<br />
+�y���d���Ă䂸�}���@�����������肪�Ƃ�������܂��B�i�P�Q���P�S��j</p>
+<p>���s�{�@�Q�]�l<br />
+�y���䂸�������傤�@���������肪�Ƃ�������܂��B�i�P�Q���W��j</p>
+<p>�������@��l�l<br />
+�l���\���I�ǂ�����񂮁@���������肪�Ƃ�������܂��B�i�P�Q���V��j</p>
+<p>���m���@�ΐ�l<br />
+�l���\���傤�����_���@���������肪�Ƃ�������܂��B�i�P�Q���U��j</p>
+<p>�É����@�֍�l<br />
+���̂܂�܂䂸�@���������肪�Ƃ�������܂��B�i�P�Q���S��j</p>
+<p>�F�{���@�哇�l<br />
+���Ƃ܂Ɓ@���������肪�Ƃ�������܂��B�i�P�Q���S��j</p>
+<p>���{�@������l<br />
+��������ׂ��@�����������肪�Ƃ�������܂��B�i�P�Q���R��j</p>
+<p>���m���@�����l<br />
+�n�H�|���Y�Z�b�g�@���͂̂��������肪�Ƃ�������܂��B�i�P�Q���R��j</p>
+<p>��錧�@����l<br />
+�l���\���܂˂��ǂ�����񂮁@�̂��������肪�Ƃ�������܂��B�i�P�Q���R��j</p>
+<p>�Ȗ،��@�}�ԗl<br />
+�g�����������@���̂��������肪�Ƃ�������܂��B�i�P�Q���Q��j</p>
+<p>�����s�@�{�n�l<br />
+�䂸���傤�����@���̂��������肪�Ƃ�������܂��B�i�P�Q���P��j</p>
+<p>�k�C���@����l<br />
+�l���\�܂邲�Ɖ�Ƃ̂����i����j�@���̂��������肪�Ƃ�������܂��B�i�P�P���Q�X��j</p>
+<p>�������@�їl<br />
+�����݂��i���肱���j�@�̂��������肪�Ƃ�������܂��B�i�P�P���Q�X��j</p>
+<p>���ꌧ�@�׍]�l<br />
+�����݂̃`�J���@�̂��������肪�Ƃ�������܂��B�i�P�P���Q�S��j</p>
+<p>�_�ސ쌧�@���X�ؗl<br />
+�y���䂸���@���̂��������肪�Ƃ�������܂��B�i�P�P���Q�Q��j</p>
+<p>���Q���@�񑺗l<br />
+�l���\���I�ǂ�����񂮁@���̂��������肪�Ƃ�������܂��B�i�P�P���P�X��j</p>
+<p>���m���@����l<br />
+�߂��ǂ�ڂ��@�̂��������肪�Ƃ�������܂��B�i�P�P���P�X��j</p>
+<p>���{�@���c�l<br />
+�l���\�̍K�䂸�݂��@���̂��������肪�Ƃ�������܂��B�i�P�P���P�W��j</p>
+<p>���R���@�n粗l<br />
+�ۂ��ƗM�q�r㻁@�̂��������肪�Ƃ�������܂��B�i�P�P���P�W��j</p>
+<p>�L�����@���C�l<br />
+�y����{�ނ�P�����X�e�B�b�N�i���傤��j�@���̂��������肪�Ƃ�������܂��B�i�P�P���P�R��j</p>
+<p>�x�R���@���\�l<br />
+�l���\���܂˂��ǂ�����񂮁@�̂��������肪�Ƃ�������܂��B�i�P�P���P�P��j</p>
+<p>���Ɍ��@�Y��l<br />
+�y���䂸�������傤�@���̂��������肪�Ƃ�������܂��B�i�P�P���W��j</p>
+<p>�����s�@�ēc�l<br />
+�M�q�݂��i�n�H���j�@���̂��������肪�Ƃ�������܂��B�i�P�P���V��j</p>
+<p>���Q���@����l<br />
+�t���t��������҃L���������e�C�X�g�@�̂��������肪�Ƃ�������܂��B�i�P�P���V��j</p>
+<p>�L�����@���J�l<br />
+�Ӗ������Ăۂ�@�̂��������肪�Ƃ�������܂��B�i�P�P���U��j</p>
+<p>�k�C���@����l<br />
+�y���d���Ă䂸�}���@���̂��������肪�Ƃ�������܂��B�i�P�P���T��j</p>
+<p>���m���@�X�c�l<br />
+�����݂̃`�J���@�̂��������肪�Ƃ�������܂��B�i�P�P���T��j</p>
+<p>�������@���c�l<br />
+�y���̉ʎ��[���[�E�ۂ񂩂�[���[�@���̂��������肪�Ƃ�������܂��B�i�P�P���P��j</p>
+<p>�����s�@�����l<br />
+�y���̉ʎ��[���[�E�ۂ񂩂�[���[�@���̂��������肪�Ƃ�������܂��B�i�P�O���R�O��j</p>
+<p>�ΐ쌧�@���R�l<br />
+�l���\�܂邲�Ɖ�Ƃ̂����i���߁j�@�̂��������肪�Ƃ�������܂��B���[�����G���[�ɂȂ�܂������A����A���j��ɔ������܂��i�P�O���Q�X��j</p>
+<p>���Q���@���{�l<br />
+���I���@�̂��������肪�Ƃ�������܂��B�i�P�O���Q�V��j</p>
+<p>���쌧�@����l<br />
+�y���d���ā@�䂸�}���@���̂��������肪�Ƃ�������܂��B�i�P�O���Q�V��j</p>
+
+
+<!--
+<p> �O�d���@���@�l<br />
+  �l���\��̂�ώρ@�̂��������肪�Ƃ�������܂��B���i�̔����́A�����v���܂��B�i�R���P�O��j</p>
+<p>���쌧�@�F�s�{�l<br />
+  �߂��ǂ�ڂ��@�̂��������肪�Ƃ�������܂��B<a href="mailto:office@netosa.com">���[���A�h���X���m�F�̏�A�����炩�炲�A���������B</a>�i�T���Q�P��j</p> -->
+  </div>
+
+</div>
+<!-- navigation end -->
+
+
+</div>
+<!-- pagebody end -->
+
+
+<div id="footer">
+<hr size="1" />
+Copyright (C) 1999 [�V���b�v�y��] All rights reserved.  
+  <div id="footer-update">
+    �ŏI�X�V��F 
+    <script language="javascript" type="text/javascript">
+    <!--
+    document.write(document.lastModified);
+    // -->
+    </script>&nbsp; 
+<img src="http://cgi.dns.ne.jp/cgi-bin/Count.cgi?df=netosa.shop_tosa.top&amp;md=5&amp;dd=D&amp;ft=2&amp;frgb=FFA040" alt="" />
+  </div>
+</div>
+<!-- footer end -->
+
+</div>
+<!-- wrapper end -->
+</body>
+</html>

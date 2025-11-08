@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Raspberry Pi Java Web Server</title>
+<style type="text/css">
+<!--
+body{
+ font-size:15px;
+}
+-->
+</style>
+</head>
+<body>
+<p>Raspberry Pi Java Web Server v1.7</p>
+Wellcom Raspberry Pi Java Web Server<br />              
+This web server program is written by all java<br />              
+and can excute directly java program(class and java program).<br />              
+Traget Server machine is  Raspberry Pi(Raspbian).<br />            
+Developping Server machine is CentOS 5.X<br />            
+Developped and written by Net Mall Tosa.<br />            
+GPL<br />
+index4.htm<br />
+<br />
+<!-- /cgi-bin/hello_cpp_cgi test start -->
+/ccgi-bin/hello_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello_cpp_cgi">/ccgi-bin/hello_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+<hr />
+<form method="post" action="/ccgi-bin/hello_cpp_cgi">
+/ccgi-bin/hello_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+  はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+/ccgi-bin/hello1_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello1_cpp_cgi">/ccgi-bin/hello1_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+<hr />
+<form method="post" action="/ccgi-bin/hello1_cpp_cgi">
+/cgi-bin/hello1_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+/ccgi-bin/hello2_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello2_cpp_cgi">/cgi-bin/hello2_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+
+<hr />
+<form method="post" action="/ccgi-bin/hello2_cpp_cgi">
+/cgi-bin/hello2_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post">
+/ccgi-bin/hello2_cpp_cgi<br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  <input type="file" name="simg" /><br />
+  <input type="submit" value="send" name="go">
+</form>
+
+<br />
+</body>
+</html>

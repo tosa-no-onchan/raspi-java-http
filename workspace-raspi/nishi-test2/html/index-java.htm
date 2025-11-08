@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Raspberry Pi C Light http Server</title>
+<style type="text/css">
+<!--
+body{
+ font-size:15px;
+}
+-->
+</style>
+</head>
+<body>
+<p>Raspberry Pi C Light http Server v1.3.2</p>
+Welcome Raspberry Pi C Light http Server<br />              
+This web server program is written by C language.<br />              
+and can excute directly C++ CGI.<br />              
+Traget Server machine is  Raspberry Pi(Raspbian).<br />            
+Developing Server machine is CentOS 5.X<br />            
+Developed and written by Net Mall Tosa.<br />            
+GPL<br />
+index-java.htm<br />
+<br />
+
+<hr />
+<p><a href="/class-bin/cgi_test.hello2_cgi">/class-bin/cgi_test.hello2_cgi</a> &nbsp; Java CGI</p>             
+<br />
+<hr />
+<form method="post" action="/class-bin/cgi_test.hello2_cgi">
+/class-bin/cgi_test.hello2_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<p><a href="/class-bin/cgi_test.hello3_cgi">/class-bin/cgi_test.hello3_cgi</a> &nbsp; Java CGI</p>             
+<br />
+<hr />
+<form method="post" action="/class-bin/cgi_test.hello3_cgi">
+/class-bin/cgi_test.hello3_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<form action="/class-bin/cgi_test.hello3_cgi" method="post" enctype="multipart/form-data">
+/class-bin/cgi_test.hello3_cgi enctype="multipart/form-data"<br />
+  <input type="file" name="simg" /><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+
+<hr />
+<p><a href="/class-mod/mod_test.test1_cgi_mod">/class-mod/mod_test.test1_cgi_mod</a> &nbsp; Java class</p>             
+<br />
+
+<hr />
+<form method="post" action="/class-mod/mod_test.test1_cgi_mod">
+/class-mod/mod_test.test1_cgi_mod<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/class-mod/mod_test.test1_cgi_mod" method="post">
+/class-mod/mod_test.test1_cgi_mod<br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<p><a href="/class-bin/MyLed_cgi">/class-bin/MyLed_cgi</a> &nbsp; java MyLed_cgi(Java cgi)  Rspberri pi LED チカチカ</p>
+
+<hr />
+<p><a href="/class-bin/TempSensor_cgi">/class-bin/TempSensor_cgi</a> &nbsp; java TempSensor_cgi(Java cgi)  Rspberri pi 温度センサー</p>
+<hr />
+<p><a href="/class-bin/Shutdown_cgi">Shutdown Raspberry pi machine</a></p>
+<br />
+
+</body>
+</html>

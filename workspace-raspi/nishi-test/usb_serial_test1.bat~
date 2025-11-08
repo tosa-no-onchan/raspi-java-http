@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~pi-nishi/workspace-raspi/nishi-test
+java -classpath ./:bin:/opt/pi4j-1.0-SNAPSHOT/lib/'*':$CLASSPATH arduino.usb_serial_test1 $1 $2 $3

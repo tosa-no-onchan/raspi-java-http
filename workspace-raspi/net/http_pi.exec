@@ -1,0 +1,6 @@
+#!/bin/sh
+# option  "" or deamon
+# -jar http_pi.jar  -> ./server.conf
+# -jar http_pi.jar deamon -> /etc/http_pid/server.conf
+/usr/bin/java -jar http_pi.jar
+#/usr/bin/java -jar http_pi.jar deamon

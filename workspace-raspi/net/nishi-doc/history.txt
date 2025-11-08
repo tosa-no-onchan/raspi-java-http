@@ -1,0 +1,65 @@
+Raspberry Pi java http server
+
+file:history.txt
+
+2014.1.14 v1.0
+first release
+
+2014.1.21 v1.1 update 2014.1.21
+java-cgi(main program) loader bug fix.
+a post data will be passed to java-cgi program correctly.
+
+2014.1.23 v1.2 update 2014.1.23
+perl-cgi loader built in.
+
+2014.1.25 v1.3 update 2014.1.25
+perl-cgi CGI.pm,cgi-lib.pl are available.
+
+2014.1.26 v1.4 update 2014.1.26
+1. perl-cgi Cookie is available.
+
+2. server.conf appended
+
+# cgi-bin error log file
+# if undefine,the error's log are put to /dev/null 
+#error_log=/home/nishi/workspace-raspi/net/cgi.log
+
+
+2014.1.27 sample program update
+1. MyLed_cgi.java
+2. Shutdown_cgi_mod.java
+
+2014.1.30 v1.5 update 2014.1.30
+built-in java class (pre load class) excuting are available.
+
+2014.2.2 v1.6 update 2014.2.2
+java-mod(java class) loader puts a error's cause to error-log
+when child's class gets error.
+
+2014.3.2
+fixed http_pid(deamon service start shell) error from insserv.
+runlevel=3 4 5
+
+2015.2.15 v1.7 update
+php script is available.
+
+see server.conf
+#PHP-cgi support -- v1.7
+
+2015.3.2 v1.8 update
+java-cgi(main program) interface is changed.
+keep-alive connect is available.
+
+see server.conf
+#keep-alive option --- v1.8
+#buffer option ---- v1.8
+
+2015.10.21 v1.8.1 update
+Bug fix.
+Some browser ,such as android google sends a http request with no data sometime.
+v1.8 hangs up when receives its http request with no data. 
+v1.8.1 has been fixed.
+
+
+
+
