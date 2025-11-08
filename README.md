@@ -9,3 +9,10 @@ workspace-raspi/net ディレクトリーにあります。
 
 ### C++ Light Http Server  
 workspace-raspi/http_pic_t.v1.3.2.1 ディレクトリーにあります。  
+
+### 開発環境  
+PC: Ubuntu 24.04  
+openjdk-21-jdk  
+openjdk-21-jdk-headless  
+openjdk-21-jre-headless  
+openjdk-21-jre  
