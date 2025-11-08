@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Raspberry Pi C Light http Server</title>
+<style type="text/css">
+<!--
+body{
+ font-size:15px;
+}
+-->
+</style>
+</head>
+<body>
+<p>Raspberry Pi C Light http Server v1.3.2</p>
+Welcome Raspberry Pi C Light http Server<br />              
+This web server program is written by C language.<br />              
+and can excute directly C++ CGI.<br />              
+Traget Server machine is  Raspberry Pi(Raspbian).<br />            
+Developing Server machine is CentOS 5.X<br />            
+Developed and written by Net Mall Tosa.<br />            
+GPL<br />
+index.htm<br />
+<br />
+<!-- /ccgi-bin/hello_cpp_cgi test start -->
+/ccgi-bin/hello_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello_cpp_cgi">/ccgi-bin/hello_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+<hr />
+<form method="post" action="/ccgi-bin/hello_cpp_cgi">
+/ccgi-bin/hello_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+  はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+/ccgi-bin/hello1_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello1_cpp_cgi">/ccgi-bin/hello1_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+<hr />
+<form method="post" action="/ccgi-bin/hello1_cpp_cgi">
+/cgi-bin/hello1_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+/ccgi-bin/hello2_cpp_cgi test start<br />
+<hr />
+<p><a href="/ccgi-bin/hello2_cpp_cgi">/ccgi-bin/hello2_cpp_cgi</a> &nbsp; C++ cgi(GET)</p>             
+
+<hr />
+<form method="post" action="/ccgi-bin/hello2_cpp_cgi">
+/ccgi-bin/hello2_cpp_cgi<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post">
+/ccgi-bin/hello2_cpp_cgi<br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  order memo<br />          
+  <textarea rows="5" name="omemo" cols="20">
+はろー
+はいそうです。
+</textarea><br />
+  order count             
+  <select size="4" name="scount" multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<form action="/ccgi-bin/hello2_cpp_cgi" method="post" enctype="multipart/form-data">
+/ccgi-bin/hello2_cpp_cgi enctype="multipart/form-data"<br />
+  <input type="file" name="simg" /><br />
+  <input type="submit" value="send" name="go">
+</form>
+<br />
+
+<hr />
+<p><a href="/ccgi-bin/MyLed_cpp_cgi">/ccgi-bin/MyLed_cpp_cgi</a> &nbsp; MyLed_cpp_cgi(C++ cgi)  Rspberri pi LED チカチカ</p>
+<hr />
+<p><a href="/class-bin/MyLed_cgi">/class-bin/MyLed_cgi</a> &nbsp; java MyLed_cgi(Java cgi)  Rspberri pi LED チカチカ</p>
+<hr />
+<p><a href="/ccgi-bin/TempSensor_cpp_cgi">/ccgi-bin/TempSensor_cpp_cgi</a> &nbsp; TempSensor_cgi(C++ cgi)  Rspberri pi 温度センサー</p>
+<hr />
+<p><a href="/class-bin/TempSensor_cgi">/class-bin/TempSensor_cgi</a> &nbsp; java TempSensor_cgi(Java cgi)  Rspberri pi 温度センサー</p>
+<hr />
+<p><a href="/class-bin/Shutdown_cgi">Shutdown Raspberry pi machine</a></p>
+<br />
+</body>
+</html>

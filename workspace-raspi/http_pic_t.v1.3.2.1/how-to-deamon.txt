@@ -1,0 +1,28 @@
+how-to-deamon.
+Welcom Raspberry Pi C light http server.
+
+1)edit ~your-id/workspace-raspi/http_pic_t.vxxx/http_pidc
+..
+#myid is your user id
+myid=xxxx  <-  change xxxx to your raspberry pi user id
+..
+
+2)test deamon script  start/check/stop
+#cd ~your-id/workspace-raspi/http_pic_t.vxxx/
+
+#./http_pidc start
+#./http_pidc check
+http://raspberry-pi-ip/  -> Can you see index.html file?
+#./http_pidc stop
+
+
+3)deproy deamon script
+#cd /etc/init.d
+#cp ~your-id/workspace-raspi/http_pic_t.vxxx/http_pidc ./
+
+#insserv http_pidc          <---- add http_pidc deamon to system
+#insserv -r http_pidc       <--- remove it
+
+#service http_pidc start
+http://raspberry-pi-ip/  -> Can you see index.html file?
+ 

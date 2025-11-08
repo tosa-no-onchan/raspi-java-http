@@ -1,0 +1,32 @@
+
+Raspi へのインストール時のメモ
+
+2015.11.16
+
+/class-mod/TempSensor2_cgi_mod を実行すると、下記エラーが出る
+
+class_path=.:/home/pi-nishi/workspace-raspi/nishi-test2/bin:/usr/lib/jvm/jdk-7-oracle-armhf/jre/lib/rt.jar
+requestDispatch():#4 connected httpReq->th_no=0
+classProcessor() :#1 0,4 start index_name=TempSensor2_cgi_mod,httpReq->parm=(null)
+classProcessor() :#3 dir_s=/home/pi-nishi/workspace-raspi/nishi-test2/bin/, prog=TempSensor2_cgi_mod
+classProcessor() :#24 exec sub proc=3213,pipe_send[1]=10,pipe_recv[0]=11
+classProcessor() :#25 close pipe_send[1]!!
+classProcessor() :#46 read from cgi nread=43
+classProcessor() :#46.1 recv-data=Error occurred during initialization of VM
+
+classProcessor() :#47 write http header
+classProcessor() :#46 read from cgi nread=41
+classProcessor() :#46.1 recv-data=Server VM is only supported on ARMv7+ VFP
+classProcessor() :#46 read from cgi nread=1
+classProcessor() :#46.1 recv-data=
+
+classProcessor() :#46 read from cgi nread=0
+classProcessor() :#46.1 recv-data=
+classProcessor() :#51 read end,close pipe_recv[0]=11
+
+
+2025.11.8
+実行の方法
+
+$ export LD_LIBRARY_PATH=/usr/lib/jvm/java-1.21.0-openjdk-amd64/lib/server:$LD_LIBRARY_PATH
+$ sudo ./httpServer_t
