@@ -107,7 +107,7 @@ How to make
 
 
 
-3] start
+3] start on Raspi
 $su -l pi
 pi>$cd ~your-id/workspace-raspi/http_pic_t.v1.3.2
 pi>$sudo ./httpServer_t
@@ -116,4 +116,7 @@ Then you can see index.htm by another pc browser(which is in a same network ex. 
 http://your-Raspberry-Pi-ip/index.htm
 
 then you can see ~your-home/www-raspi/html/index4.htm index-file by your pc browser.  
+
+4] start on Ubuntu 24.04
+$ sudo sh ./httpServer_t.exec.sh
 

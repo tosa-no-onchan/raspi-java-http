@@ -1,0 +1,12 @@
+
+CPAN を使う
+
+注) /root/  cpan の設定情報ができる
+
+$ sudo perl -MCPAN -e shell
+> install DBI::pm
+> install DBD::SQLite
+> quit
+
+
+$ sudo apt-get install libgd-perl
