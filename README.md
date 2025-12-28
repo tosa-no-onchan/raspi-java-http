@@ -9,6 +9,8 @@ workspace-raspi/net ディレクトリーにあります。
 
 ### C++ Light Http Server  
 workspace-raspi/http_pic_t.v1.3.2.1 ディレクトリーにあります。  
+Ubuntu 24.04 PC で、Apache 等をインストールしなくても、かんたんに、Perl CGI が試せます!!  
+超、便利。  
 
 ### 開発環境  
 PC: Ubuntu 24.04  
