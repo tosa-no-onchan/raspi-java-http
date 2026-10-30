@@ -22,10 +22,12 @@ Ubuntu 24.04 環境で、make できます。
 
 1. Build  
 $ make  
+src/xxx.o を削除するのは、  
+$ make clean  
 
-2. server.conf を、自分の環境にあわせてください。  
+3. server.conf を、自分の環境にあわせてください。  
 
-3. Run  
+4. Run  
 $ sudo ./light_http_server  
 
 P.S.  
