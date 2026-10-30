@@ -29,7 +29,10 @@ $ make
 $ sudo ./light_http_server  
 
 P.S.  
-Ubuntu 24.04 ローカル環境で、 MT の古い版を走らせて、動作確認しています。  
+1. PHP を使う場合は、php-cgi をインストールしてください。  
+$ sudo apt install php-cgi
+  
+2. Ubuntu 24.04 ローカル環境で、 MT の古い版を走らせて、動作確認しています。  
 結構便利。  
 また、 Laravel PHP の動作確認も、一応できます。
 
