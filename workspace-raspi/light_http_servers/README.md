@@ -1,6 +1,6 @@
 ### C++ Light Http Server  
 
-Ubuntu 24.0  C++ Light Http Server  
+Ubuntu 24.04  C++ Light Http Server  
 make したら、sudo ./light_http_server で、すぐ試せます。  
 lighttpd より、お手軽に試せます。  
 
