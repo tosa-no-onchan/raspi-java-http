@@ -8,7 +8,7 @@ workspace-raspi/net ディレクトリーにあります。
 [net/nishi-doc](https://github.com/tosa-no-onchan/raspi-java-http/tree/main/workspace-raspi/net/nishi-doc)  
 
 ### C++ Light Http Server  
-workspace-raspi/light_http_servers  に、最新版があります。  
+workspace-raspi/light_http_servers (新着 2026.10.30)  に、最新版があります。  
 workspace-raspi/http_pic_t.v1.3.2.1 (こちらは、C 版です)。  
 Ubuntu 24.04 PC で、Apache 等をインストールしなくても、かんたんに、Perl CGI が試せます!!  
 最新版は、 PHP もOK です。  
