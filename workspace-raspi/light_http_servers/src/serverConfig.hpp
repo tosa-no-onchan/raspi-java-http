@@ -10,6 +10,7 @@ struct _defs{
   std::string allow_networks;  //192.168.1.0/255.255.255.0
   std::string http_host="192.168.1.170";     // "192.168.1.170"
   std::string server_name="192.168.1.170";   // "192.168.1.170"
+  std::string user_name;
   int server_port;   //80
   std::string web_root;  //home/nishi/www/kyusyupost/html
   std::string cgi_root;  //home/nishi/netosa/www/cgi-bin

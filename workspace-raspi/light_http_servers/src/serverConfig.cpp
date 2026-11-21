@@ -69,6 +69,7 @@ int serverConfig(Defs &defs){
 
     defs.http_host = config["http_host"] != "" ? config["http_host"]: "192.168.1.170";
     defs.server_name = config["server_name"] != "" ? config["server_name"]: "192.168.1.170";
+    defs.user_name = config["user_name"] != "" ? config["user_name"]: "user";
     defs.larable_index = config["larable_index"] != "" ? config["larable_index"] : "";
 
     defs.allow_networks = config["allow_networks"];
@@ -97,6 +98,7 @@ int serverConfig(Defs &defs){
 
     std::cout << "http_host:      " << defs.http_host<< std::endl;
     std::cout << "server_name:    " << defs.server_name<< std::endl;
+    std::cout << "user_name:    " << defs.user_name<< std::endl;
     std::cout << "larable_index:  " << defs.larable_index<< std::endl;
     std::cout << "cgi_error_log:  " << defs.cgi_error_log<< std::endl;
     std::cout << "cgi_log_path:  " << defs.cgi_log_path<< std::endl;

@@ -483,6 +483,18 @@ class Exec_proc{
     public:
     Exec_proc(){}
 
+    struct passwd* pw;
+
+    bool init(){
+        // 1. ユーザー名からユーザー情報を取得
+        pw = getpwnam(defs.user_name.c_str());
+        if (pw == nullptr) {
+            std::cerr << "Exec_proc::init() #1 ユーザーが見つかりません: " << defs.user_name << std::endl;
+            exit(1);
+        }
+        return true;
+    }
+
     // Execute PHP script safely
     bool execute_php(const string& script_path, HttpRequest& request) {
 
@@ -567,6 +579,19 @@ class Exec_proc{
         ---------*/
         if (fork_result == (pid_t)0) {
             // Child process
+
+            // 2. 取得した GID と UID を使って権限を切り替える
+            // 必ず setgid -> setuid の順番で実行します
+            if (setgid(pw->pw_gid) != 0) {
+                std::cerr << "setgid 失敗" << std::endl;
+                _exit(1); 
+            }
+
+            if (setuid(pw->pw_uid) != 0) {
+                std::cerr << "setuid 失敗" << std::endl;
+                _exit(1);
+            }
+
             // Set environment variables
             setenv("REQUEST_METHOD", request.method.c_str(), 1);    // PHP側では $_SERVER['REQUEST_METHOD'] になる
             setenv("SCRIPT_FILENAME", script_path.c_str(), 1);      // $_SERVER['SCRIPT_FILENAME'] になる
@@ -665,16 +690,14 @@ class Exec_proc{
             // Execute PHP
             //auto ex_rc = execl("/usr/bin/php", "php", "-f", script_path.c_str(), nullptr);
             string script_x = "./"+script;
-            auto ex_rc = execl("/usr/bin/php-cgi", "php-cgi", script_x.c_str(), nullptr);
-            //auto ex_rc = execl("/usr/bin/php-cgi", "php-cgi", script_path.c_str(), nullptr);
+            execl("/usr/bin/php-cgi", "php-cgi", script_x.c_str(), nullptr);
+            //execl("/usr/bin/php-cgi", "php-cgi", script_path.c_str(), nullptr);
             // changed by nishi 2025.12.29
-            //auto ex_rc = execl("/usr/bin/php", "php" , "-f", script.c_str(), nullptr);
-            //auto ex_rc=execl(script.c_str(),0);
-            if(ex_rc==-1){
-                // send error response
-                exit(1);  // execl failed
-            }
-            exit(0);
+            //execl("/usr/bin/php", "php" , "-f", script.c_str(), nullptr);
+            //execl(script.c_str(),0);
+            std::cerr << "execl 失敗" << std::endl;
+            _exit(1);
+
         }
         /*--------
         * 親プロセスです
@@ -942,7 +965,19 @@ class Exec_proc{
         ---------*/
         if (fork_result == (pid_t)0) {
             // Child process
-            
+
+            // 2. 取得した GID と UID を使って権限を切り替える
+            // 必ず setgid -> setuid の順番で実行します
+            if (setgid(pw->pw_gid) != 0) {
+                std::cerr << "setgid 失敗" << std::endl;
+                _exit(1); 
+            }
+
+            if (setuid(pw->pw_uid) != 0) {
+                std::cerr << "setuid 失敗" << std::endl;
+                _exit(1);
+            }
+
             // Set environment variables
             setenv("REQUEST_METHOD", request.method.c_str(), 1);    // PHP側では $_SERVER['REQUEST_METHOD'] になる
             setenv("SCRIPT_FILENAME", script_path.c_str(), 1);      // $_SERVER['SCRIPT_FILENAME'] になる
@@ -1053,17 +1088,14 @@ class Exec_proc{
             // Execute CGI
             //execl("/usr/bin/php", "php", "-f", script_path.c_str(), nullptr);
             // changed by nishi 2025.12.29
-            //auto ex_rc =execl("/usr/bin/perl", "perl" , "-f", script.c_str(), nullptr);
+            //ex_rc =execl("/usr/bin/perl", "perl" , "-f", script.c_str(), nullptr);
             string script_cur= "./"+script;
-            auto ex_rc=execl(script_cur.c_str(),"",0);
-            //auto ex_rc=execl(script_cur.c_str(),0);
-            if(ex_rc==-1){
-                //std::cout << "execute_cgi():#5 ex_rc:"<< ex_rc <<std::endl;
-                // send error response
-                exit(1);  // execl failed
-            }
-            //std::cout << "execute_cgi():#6 ex_rc:"<< ex_rc <<std::endl;
-            exit(0);
+            // 3. 外部コマンドの実行
+            execl(script_cur.c_str(),"",0);
+            //execl(script_cur.c_str(),0);
+            std::cerr << "execl 失敗" << std::endl;
+            _exit(1);
+
         }
         /*--------
         * 親プロセスです
@@ -1278,6 +1310,10 @@ class Process_proc{
 
     Exec_proc exec_proc;
     HttpResponse response;
+
+    void init(){
+        exec_proc.init();
+    }
 
     // Handle directory requests
     HttpResponse handle_directory(const string& dir_path,HttpRequest& request){
@@ -1723,7 +1759,9 @@ class HeadAccept{
             return request;
         }
         // Validate HTTP method
-        static const unordered_set<string> allowed_methods = {"GET", "POST", "HEAD"};
+        //static const unordered_set<string> allowed_methods = {"GET", "POST", "HEAD"};
+        // changed by nishi 2026.11.21
+        static const unordered_set<string> allowed_methods = {"GET", "POST", "HEAD", "PUT", "DELETE"};
         if (allowed_methods.find(request.method) == allowed_methods.end()) {
             return request;
         }
@@ -1794,7 +1832,9 @@ class HeadAccept{
         #endif
 
         // method GET
-        if (request.method=="GET"){
+        //if (request.method=="GET"){
+        // changed by nishi 2026.11.21
+        if (request.method=="GET" || request.method=="PUT" || request.method=="DELETE"){
             auto pos=request.path.find("?");
             if(pos != string::npos){
                 // 先頭から '?' の直前までを安全に切り出す
@@ -1843,6 +1883,7 @@ void handle_client(int client_socket, string client_ip) {
 
     HeadAccept headaccept;
     Process_proc process_proc;
+    process_proc.init();
     
     // Track connection per IP
     {
@@ -1919,6 +1960,14 @@ void sigchld_handler(int sig) {
 // Main server function
 int main() {
     serverConfig(defs);
+
+    // 1. ユーザー名からユーザー情報を取得
+    struct passwd* pw = getpwnam(defs.user_name.c_str());
+    if (pw == nullptr) {
+        std::cerr << "ユーザーが見つかりません: " << defs.user_name << std::endl;
+        exit(1);
+    }
+
     // Install SIGCHLD handler
     struct sigaction sa;
     sa.sa_handler = sigchld_handler;
