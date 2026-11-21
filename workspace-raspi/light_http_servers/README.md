@@ -38,4 +38,11 @@ $ sudo apt install php-cgi
 結構便利。  
 また、 Laravel PHP の動作確認も、一応できます。
 
+##### update  
+
+    2026.11.21  
+    1) set-yid,set-gid に対応しました。  
+    server.conf で、指定します。  
+    user_name=your-id  
+    2) PUT / DELETE をサポートしました。  
 
