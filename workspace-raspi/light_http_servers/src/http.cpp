@@ -895,6 +895,10 @@ class Exec_proc{
         //bool pipe_f=true;
         bool rc=true;
 
+        // 共通ヘッダ部（Date, Server, Keep-Alive, Connection）を組み立てる例 add by nishi 2026.11.23
+        //char common_hdr[512] = {0};
+        std::string common_hdr;
+
         char o_buff[512];
         char wk[512];
 
@@ -1130,23 +1134,39 @@ class Exec_proc{
             ctime_r(&ctm,wk);
             char *ctm_s=wk;
             rtrim(ctm_s,0x0a);
-            strcat(o_buff,http_date);
-            strcat(o_buff,ctm_s);
-            strcat(o_buff,"\r\n");
+
+            //snprintf(common_hdr, sizeof(common_hdr),
+            //    "%s%s\r\n%s%s%s",
+            //    http_date, ctm_s,
+            //    http_server,
+            //    http_keep_alive,
+            //    http_con_keep_alive
+            //);
+
+            std::string common_hdr =
+                std::string(http_date) + ctm_s + "\r\n" +
+                http_server +
+                http_keep_alive +
+                http_con_keep_alive;
+
+
+            //strcat(o_buff,http_date);
+            //strcat(o_buff,ctm_s);
+            //strcat(o_buff,"\r\n");
 
             // Server: raspberry-pi\r\n
-            strcat(o_buff, http_server);
+            //strcat(o_buff, http_server);
             //Keep-Alive: timeout=5, max=500
-            strcat(o_buff, http_keep_alive);
+            //strcat(o_buff, http_keep_alive);
             //Connection: Keep-Alive
-            strcat(o_buff, http_con_keep_alive);
+            //strcat(o_buff, http_con_keep_alive);
 
             //Connection: close
             //strcat(o_buff, http_con_close);
 
             //Transfer-Encoding: chunked
             //+"Content-type: text/html\r\n\r\n" // 注）最後は \r\nが２個必要
-            size_t sl=strlen(o_buff);
+            //size_t sl=strlen(o_buff);
             //---- end ----
 
             //size_t sl=strlen(o_buff);
@@ -1221,48 +1241,46 @@ class Exec_proc{
                 #endif
                 if(nread > 0){
                     //memdump(httpReq->buff,nread);
+                    // 最初は、STATUS があるかもしれないから、それを、処理する。
                     if(first_f==true){
                         #ifndef _SILENT
                             printf("execute_cgi() :#47 write http header\n");
                         #endif
+                        // 1. buff を string に変換
+                        string cgi_output(request.buff,nread);
+                        string status_line = http_ok; // デフォルトは "HTTP/1.1 200 OK\r\n"
 
-                        string cgi_output = string(request.buff,nread);
                         #ifndef _SILENT
                             //std::cout << "execute_cgi() :#47.1 cgi_output from Client buff:\n"<< cgi_output << std::endl;
                         #endif
 
-                        // Perl が 「Status: 302」を出力しているか検索
-                        if (cgi_output.find("Status: 302") != std::string::npos) {
-
-                            #ifndef _SILENT
-                                std::cout << "execute_cgi() :#48 [置換前ヘッダー]:\n" << cgi_output << std::endl;
-                            #endif
-
-                            // 「Status: 302 Moved」の部分を「HTTP/1.1 302 Found」に置換する
-                            string target = "Status: 302 Moved";
-                            size_t pos = cgi_output.find(target);
-                            if (pos != string::npos) {
-                                cgi_output.replace(pos, target.length(), "HTTP/1.1 302 Found");
+                        // changed by nishi 2026.11.23
+                        size_t s_pos = cgi_output.find("Status:");
+                        if (s_pos != string::npos) {
+                            size_t val_start = s_pos + 7; // "Status:" の後ろ
+                            while (val_start < cgi_output.size() && cgi_output[val_start] == ' ') {
+                                ++val_start;
                             }
+                            size_t line_end = cgi_output.find_first_of("\r\n", val_start);
+                            string status_val = (line_end == string::npos)
+                                ? cgi_output.substr(val_start)
+                                : cgi_output.substr(val_start, line_end - val_start);
 
-                            #ifndef _SILENT
-                                std::cout << "execute_cgi() :#48_1 [置換後ヘッダー]:\n" << cgi_output << std::endl;
-                                //exit(0);
-                            #endif
-
-                            // 置換したヘッダー（Locationや空行もすべて含まれています）をそのままブラウザへ送信！
-                            if (write(request.sockfd, cgi_output.c_str(), cgi_output.length()) != (ssize_t)cgi_output.length()) {
-                                printf("execute_cgi() :#48_2 write error \n");
-                                break;
+                            if (!status_val.empty()) {
+                                status_line = "HTTP/1.1 " + status_val + "\r\n";
                             }
-                        } 
-                        else if(write(request.sockfd,o_buff,sl) != (ssize_t)sl){
-                            printf("execute_cgi() :#49  write error \n");
+                        }
+                        // ステータス行 + 共通ヘッダを先に送信
+                        string resp_head = status_line + string(common_hdr);
+                        if (write(request.sockfd, resp_head.c_str(), resp_head.size()) != (ssize_t)resp_head.size()) {
+                            printf("execute_cgi() :#49 write error\n");
                             break;
                         }
-                    }
-                    if(write(request.sockfd,request.buff,nread) != nread){
-                        printf("execute_cgi() :#50  write error \n");
+                        first_f = false;
+                    }                        
+                    // CGI 側の出力（Content-Type や JSON ボディ）をそのまま送信
+                    if (write(request.sockfd, request.buff, nread) != nread) {
+                        printf("execute_cgi() :#50 write error\n");
                         break;
                     }
                     first_f=false;
