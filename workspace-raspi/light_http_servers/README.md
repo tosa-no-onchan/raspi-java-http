@@ -45,4 +45,7 @@ $ sudo apt install php-cgi
     server.conf で、指定します。  
     user_name=your-id  
     2) PUT / DELETE をサポートしました。  
+    
+    2026.11.25  
+    1) perl cgi の 戻り HTTP status を適切に、client へ渡すように修正しました。   
 
